@@ -1,0 +1,84 @@
+name: Clojars Deployment
+
+on:
+  push:
+    branches: [ main ]
+    tags:
+      - 'v*'
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up JDK
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+
+    - name: Setup Clojure
+      uses: DeLaGuardo/setup-clojure@13.2
+      with:
+        cli: latest
+
+    - name: Cache dependencies
+      uses: actions/cache@v4
+      with:
+        path: |
+          ~/.m2/repository
+          ~/.gitlibs
+          ~/.deps.clj
+        key: ${{ runner.os }}-deps-${{ hashFiles('deps.edn') }}
+        restore-keys: |
+          ${{ runner.os }}-deps-
+
+    - name: Run tests
+      run: clojure -M:test
+
+    - name: Build jar
+      run: clojure -T:build jar
+
+  publish:
+    needs: build
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Check tag matches build.clj version
+      run: |
+        TAG="${GITHUB_REF#refs/tags/v}"
+        grep -q "(def version \"$TAG\")" build.clj || \
+          { echo "Tag v$TAG does not match version in build.clj"; exit 1; }
+
+    - name: Set up JDK
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+
+    - name: Setup Clojure
+      uses: DeLaGuardo/setup-clojure@13.2
+      with:
+        cli: latest
+
+    - name: Cache dependencies
+      uses: actions/cache@v4
+      with:
+        path: |
+          ~/.m2/repository
+          ~/.gitlibs
+          ~/.deps.clj
+        key: ${{ runner.os }}-deps-${{ hashFiles('deps.edn') }}
+        restore-keys: |
+          ${{ runner.os }}-deps-
+
+    - name: Publish to Clojars
+      env:
+        CLOJARS_USERNAME: ${{ secrets.CLOJARS_USERNAME }}
+        CLOJARS_PASSWORD: ${{ secrets.CLOJARS_PASSWORD }}
+      run: clojure -T:build deploy
