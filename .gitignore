@@ -1,0 +1,13 @@
+.cpcache/
+.lsp/
+.clj-kondo/
+.calva/
+.nrepl-port
+
+target/
+classes/
+
+.idea/
+.vscode/
+
+.DS_Store
