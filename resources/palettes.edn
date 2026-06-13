@@ -1,1585 +1,1703 @@
-;; Current default palettes with corresponding metadata
-
-; Index of 6/11/2026
-
-; :arctic
-    ; :.../arctic-water
-    ; :.../aurora
-    ; :.../glacier
-    ; :.../winter-sky
-
-; :autumn
-    ; :.../autumn-trail
-    ; :.../copper-leaf
-    ; :.../cranberry-bog
-    ; :.../golden-aspen
-    ; :.../harvest
-    ; :.../macintosh
-    ; :.../oak-ember
-
-; :desert
-    ; :.../desert-dune
-    ; :.../sandstone
-    ; :.../wheat
-
-; :dessert
-    ; :.../apple-pie
-    ; :.../blueberry
-    ; :.../brownie
-    ; :.../sherbert
-    ; :.../vanilla
-    ; :.../wildberry
-
-; :fantasy
-    ; :.../adventurous
-    ; :.../dragon-hoard
-    ; :.../lavender-dusk
-    ; :.../lilac-field
-    ; :.../royal-plum
-    ; :.../tavern
-    ; :.../violet-mist
-
-; :floral
-    ; :.../blush
-    ; :.../cherry-bloom
-    ; :.../rose-garden
-    ; :.../rhododendron
-
-; :forest
-    ; :.../alien-jungle
-    ; :.../emerald-canopy
-    ; :.../fern
-    ; :.../hungry-caterpillar
-    ; :.../jungle
-    ; :.../moonlit-forest
-    ; :.../moss-garden
-    ; :.../pine-shadows
-    ; :.../rainforest
-
-; :monochrome
-    ; :.../charcoal
-    ; :.../fog
-    ; :.../granite
-    ; :.../silver-morning
-    ; :.../modern-industrial
-
-; :neutral
-    ; :.../antique-paper
-    ; :.../coffee
-    ; :.../ink
-    ; :.../sepia
-    ; :.../stone
-
-; :ocean
-    ; :.../abyss
-    ; :.../coastal
-    ; :.../coral-reef
-    ; :.../kelp-forest
-    ; :.../oasis
-    ; :.../ocean-deep
-    ; :.../storm-sea
-    ; :.../surf
-    ; :.../teal-bay
-    ; :.../tidepool
-    ; :.../tropical-water
-
-; :pastel
-    ; :.../buttercream
-    ; :.../cotton-candy
-    ; :.../peachy
-    ; :.../smartees
-
-; :rainbow
-    ; :.../cool-arc
-    ; :.../pastel-arc
-    ; :.../pastel-quad
-    ; :.../quad
-    ; :.../spectrum
-    ; :.../traditional
-    ; :.../triad
-    ; :.../warm-arc
-
-; :space
-    ; :.../crystal-cavern
-    ; :.../cosmic
-    ; :.../deep-night
-    ; :.../galaxy
-    ; :.../midnight-city
-    ; :.../nebula
-  
-; :spring
-    ; :.../cherry-sky
-    ; :.../fresh-cut
-    ; :.../lime-grove
-    ; :.../orchard-bloom
-    ; :.../peony
-    ; :.../post-rain-blush
-    ; :.../spring-field
-    ; :.../tulip
-    ; :.../wildflower
-
-; :sunset
-    ; :.../apricot
-    ; :.../dusk-ember
-    ; :.../golden-hour
-    ; :.../sunset-ridge
-
-; :synthwave
-    ; :.../neon-night
-    ; :.../outrun
-    ; :.../synthwave
-
-; :volcanic
-    ; :.../ember
-    ; :.../lava-flow
-    ; :.../obsidian
-    ; :.../sulfur
-    ; :.../volcanic
-
-{; Arctic
+{
+ ; Arctic
  :arctic/arctic-water
- {:hex ["#122236" "#2A5276" "#548EB6" "#96CAE4" "#ECF8FC"]
-  :rgba [[18 34 54 255] [42 82 118 255] [84 142 182 255] [150 202 228 255] [236 248 252 255]]
-  :count 5
-  :name :arctic-water
-  :category :arctic
-  :family :blue
-  :brightness 0.361
-  :temperature 0.381
-  :saturation 0.539
-  :contrast 0.905
-  :mean-lightness 0.535
-  :hue-concentration 0.993
-  :tags #{"blue" "high-contrast" "monochrome"}}
+  {:hex ["#122236" "#2A5276" "#548EB6" "#96CAE4" "#ECF8FC"]
+   :rgba [[18 34 54 255] [42 82 118 255] [84 142 182 255] [150 202 228 255] [236 248 252 255]]
+   :count 5
+   :name :arctic-water
+   :category :arctic
+   :family :blue
+   :brightness 0.361
+   :temperature 0.381
+   :saturation 0.663
+   :contrast 0.905
+   :mean-lightness 0.557
+   :hue-concentration 0.976
+   :tags #{"blue" "high-contrast" "monochrome"}}
  :arctic/aurora
- {:hex ["#081826" "#103A4A" "#1E6E6A" "#46B07E" "#7CE0A8" "#CFF6E0"]
-  :rgba [[8 24 38 255] [16 58 74 255] [30 110 106 255] [70 176 126 255] [124 224 168 255] [207 246 224 255]]
-  :count 6
-  :name :aurora
-  :category :arctic
-  :family :teal
-  :brightness 0.326
-  :temperature 0.408
-  :saturation 0.6
-  :contrast 0.837
-  :mean-lightness 0.432
-  :hue-concentration 0.905
-  :tags #{"glow" "monochrome" "teal" "vivid"}}
+  {:hex ["#081826" "#103A4A" "#1E6E6A" "#46B07E" "#7CE0A8" "#CFF6E0"]
+   :rgba [[8 24 38 255] [16 58 74 255] [30 110 106 255] [70 176 126 255] [124 224 168 255] [207 246 224 255]]
+   :count 6
+   :name :aurora
+   :category :arctic
+   :family :teal
+   :brightness 0.326
+   :temperature 0.408
+   :saturation 0.743
+   :contrast 0.837
+   :mean-lightness 0.521
+   :hue-concentration 0.769
+   :tags #{"glow" "monochrome" "teal" "vivid"}}
  :arctic/glacier
- {:hex ["#1A283A" "#3A5A80" "#669CC6" "#B0D6EC" "#F6FCFF"]
-  :rgba [[26 40 58 255] [58 90 128 255] [102 156 198 255] [176 214 236 255] [246 252 255 255]]
-  :count 5
-  :name :glacier
-  :category :arctic
-  :family :blue
-  :brightness 0.405
-  :temperature 0.395
-  :saturation 0.565
-  :contrast 0.944
-  :mean-lightness 0.582
-  :hue-concentration 0.996
-  :tags #{"blue" "high-contrast" "monochrome"}}
+  {:hex ["#1A283A" "#3A5A80" "#669CC6" "#B0D6EC" "#F6FCFF"]
+   :rgba [[26 40 58 255] [58 90 128 255] [102 156 198 255] [176 214 236 255] [246 252 255 255]]
+   :count 5
+   :name :glacier
+   :category :arctic
+   :family :blue
+   :brightness 0.405
+   :temperature 0.395
+   :saturation 0.678
+   :contrast 0.944
+   :mean-lightness 0.595
+   :hue-concentration 0.982
+   :tags #{"blue" "high-contrast" "monochrome"}}
  :arctic/winter-sky
- {:hex ["#1C2244" "#3A4684" "#6A78C2" "#A8B4E6" "#E8ECFA"]
-  :rgba [[28 34 68 255] [58 70 132 255] [106 120 194 255] [168 180 230 255] [232 236 250 255]]
-  :count 5
-  :name :winter-sky
-  :category :arctic
-  :family :blue
-  :brightness 0.32
-  :temperature 0.389
-  :saturation 0.484
-  :contrast 0.822
-  :mean-lightness 0.575
-  :hue-concentration 1.0
-  :tags #{"blue" "monochrome" "twilight"}}
+  {:hex ["#1C2244" "#3A4684" "#6A78C2" "#A8B4E6" "#E8ECFA"]
+   :rgba [[28 34 68 255] [58 70 132 255] [106 120 194 255] [168 180 230 255] [232 236 250 255]]
+   :count 5
+   :name :winter-sky
+   :category :arctic
+   :family :blue
+   :brightness 0.32
+   :temperature 0.389
+   :saturation 0.596
+   :contrast 0.822
+   :mean-lightness 0.532
+   :hue-concentration 0.999
+   :tags #{"blue" "monochrome" "twilight"}}
 
  ; Autumn
  :autumn/autumn-trail
- {:hex ["#341A12" "#623018" "#984E22" "#D6843E" "#F4DCAA"]
-  :rgba [[52 26 18 255] [98 48 24 255] [152 78 34 255] [214 132 62 255] [244 220 170 255]]
-  :count 5
-  :name :autumn-trail
-  :category :autumn
-  :family :orange
-  :brightness 0.246
-  :temperature 0.677
-  :saturation 0.629
-  :contrast 0.718
-  :mean-lightness 0.419
-  :hue-concentration 0.987
-  :tags #{"monochrome" "orange" "vivid"}}
+  {:hex ["#341A12" "#623018" "#984E22" "#D6843E" "#F4DCAA"]
+   :rgba [[52 26 18 255] [98 48 24 255] [152 78 34 255] [214 132 62 255] [244 220 170 255]]
+   :count 5
+   :name :autumn-trail
+   :category :autumn
+   :family :orange
+   :brightness 0.246
+   :temperature 0.677
+   :saturation 0.73
+   :contrast 0.718
+   :mean-lightness 0.463
+   :hue-concentration 0.971
+   :tags #{"monochrome" "orange" "vivid"}}
  :autumn/copper-leaf
- {:hex ["#2A1010" "#5E2014" "#9E3A1A" "#D8662E" "#F6C088"]
-  :rgba [[42 16 16 255] [94 32 20 255] [158 58 26 255] [216 102 46 255] [246 192 136 255]]
-  :count 5
-  :name :copper-leaf
-  :category :autumn
-  :family :orange
-  :brightness 0.196
-  :temperature 0.701
-  :saturation 0.672
-  :contrast 0.582
-  :mean-lightness 0.392
-  :hue-concentration 0.985
-  :tags #{"dark" "low-contrast" "monochrome" "orange" "vivid"}}
+  {:hex ["#2A1010" "#5E2014" "#9E3A1A" "#D8662E" "#F6C088"]
+   :rgba [[42 16 16 255] [94 32 20 255] [158 58 26 255] [216 102 46 255] [246 192 136 255]]
+   :count 5
+   :name :copper-leaf
+   :category :autumn
+   :family :orange
+   :brightness 0.196
+   :temperature 0.701
+   :saturation 0.746
+   :contrast 0.582
+   :mean-lightness 0.412
+   :hue-concentration 0.978
+   :tags #{"dark" "low-contrast" "monochrome" "orange" "vivid"}}
  :autumn/cranberry-bog
- {:hex ["#1E0A10" "#4E1020" "#8A1E38" "#C04458" "#E89098"]
-  :rgba [[30 10 16 255] [78 16 32 255] [138 30 56 255] [192 68 88 255] [232 144 152 255]]
-  :count 5
-  :name :cranberry-bog
-  :category :autumn
-  :family :red
-  :brightness 0.129
-  :temperature 0.628
-  :saturation 0.591
-  :contrast 0.388
-  :mean-lightness 0.368
-  :hue-concentration 0.997
-  :tags #{"berry" "dark" "low-contrast" "monochrome" "red" "tart"}}
+  {:hex ["#1E0A10" "#4E1020" "#8A1E38" "#C04458" "#E89098"]
+   :rgba [[30 10 16 255] [78 16 32 255] [138 30 56 255] [192 68 88 255] [232 144 152 255]]
+   :count 5
+   :name :cranberry-bog
+   :category :autumn
+   :family :red
+   :brightness 0.129
+   :temperature 0.628
+   :saturation 0.658
+   :contrast 0.388
+   :mean-lightness 0.335
+   :hue-concentration 0.998
+   :tags #{"berry" "dark" "low-contrast" "monochrome" "red" "tart"}}
  :autumn/golden-aspen
- {:hex ["#2A1E08" "#5E4A12" "#9E8420" "#D8BC3E" "#F4E89A"]
-  :rgba [[42 30 8 255] [94 74 18 255] [158 132 32 255] [216 188 62 255] [244 232 154 255]]
-  :count 5
-  :name :golden-aspen
-  :category :autumn
-  :family :yellow
-  :brightness 0.326
-  :temperature 0.688
-  :saturation 0.698
-  :contrast 0.778
-  :mean-lightness 0.403
-  :hue-concentration 0.997
-  :tags #{"gold" "leaves" "monochrome" "vivid" "yellow"}}
+  {:hex ["#2A1E08" "#5E4A12" "#9E8420" "#D8BC3E" "#F4E89A"]
+   :rgba [[42 30 8 255] [94 74 18 255] [158 132 32 255] [216 188 62 255] [244 232 154 255]]
+   :count 5
+   :name :golden-aspen
+   :category :autumn
+   :family :yellow
+   :brightness 0.326
+   :temperature 0.688
+   :saturation 0.817
+   :contrast 0.778
+   :mean-lightness 0.537
+   :hue-concentration 0.993
+   :tags #{"gold" "leaves" "monochrome" "vivid" "yellow"}}
  :autumn/harvest
- {:hex ["#3A1A0E" "#6E3A16" "#A8631E" "#D89A30" "#F2D27A"]
-  :rgba [[58 26 14 255] [110 58 22 255] [168 99 30 255] [216 154 48 255] [242 210 122 255]]
-  :count 5
-  :name :harvest
-  :category :autumn
-  :family :orange
-  :brightness 0.259
-  :temperature 0.719
-  :saturation 0.696
-  :contrast 0.647
-  :mean-lightness 0.404
-  :hue-concentration 0.986
-  :tags #{"harvest" "low-contrast" "monochrome" "orange" "vivid" "warm"}}
+  {:hex ["#3A1A0E" "#6E3A16" "#A8631E" "#D89A30" "#F2D27A"]
+   :rgba [[58 26 14 255] [110 58 22 255] [168 99 30 255] [216 154 48 255] [242 210 122 255]]
+   :count 5
+   :name :harvest
+   :category :autumn
+   :family :orange
+   :brightness 0.259
+   :temperature 0.719
+   :saturation 0.813
+   :contrast 0.647
+   :mean-lightness 0.492
+   :hue-concentration 0.97
+   :tags #{"harvest" "low-contrast" "monochrome" "orange" "vivid" "warm"}}
  :autumn/macintosh
- {:hex ["#241410" "#5E1A18" "#A82A22" "#D8603E" "#E8B468"]
-  :rgba [[36 20 16 255] [94 26 24 255] [168 42 34 255] [216 96 62 255] [232 180 104 255]]
-  :count 5
-  :name :macintosh
-  :category :autumn
-  :family :red
-  :brightness 0.177
-  :temperature 0.698
-  :saturation 0.608
-  :contrast 0.499
-  :mean-lightness 0.387
-  :hue-concentration 0.975
-  :tags #{"apple" "crisp" "dark" "low-contrast" "monochrome" "red" "vivid"}}
+  {:hex ["#241410" "#5E1A18" "#A82A22" "#D8603E" "#E8B468"]
+   :rgba [[36 20 16 255] [94 26 24 255] [168 42 34 255] [216 96 62 255] [232 180 104 255]]
+   :count 5
+   :name :macintosh
+   :category :autumn
+   :family :orange
+   :brightness 0.177
+   :temperature 0.698
+   :saturation 0.676
+   :contrast 0.499
+   :mean-lightness 0.398
+   :hue-concentration 0.965
+   :tags #{"apple" "crisp" "dark" "earth-tone" "low-contrast" "monochrome" "orange" "red" "vivid"}}
  :autumn/oak-ember
- {:hex ["#241410" "#4E2A18" "#824426" "#B8743A" "#E0B27A"]
-  :rgba [[36 20 16 255] [78 42 24 255] [130 68 38 255] [184 116 58 255] [224 178 122 255]]
-  :count 5
-  :name :oak-ember
-  :category :autumn
-  :family :orange
-  :brightness 0.171
-  :temperature 0.655
-  :saturation 0.521
-  :contrast 0.482
-  :mean-lightness 0.357
-  :hue-concentration 0.992
-  :tags #{"dark" "earth-tone" "low-contrast" "monochrome" "orange" "wood"}}
+  {:hex ["#241410" "#4E2A18" "#824426" "#B8743A" "#E0B27A"]
+   :rgba [[36 20 16 255] [78 42 24 255] [130 68 38 255] [184 116 58 255] [224 178 122 255]]
+   :count 5
+   :name :oak-ember
+   :category :autumn
+   :family :orange
+   :brightness 0.171
+   :temperature 0.655
+   :saturation 0.644
+   :contrast 0.482
+   :mean-lightness 0.392
+   :hue-concentration 0.987
+   :tags #{"dark" "earth-tone" "low-contrast" "monochrome" "orange" "wood"}}
 
  ; Desert
  :desert/desert-dune
- {:hex ["#2E1E14" "#684826" "#AA7A40" "#DCB468" "#F8E8C2"]
-  :rgba [[46 30 20 255] [104 72 38 255] [170 122 64 255] [220 180 104 255] [248 232 194 255]]
-  :count 5
-  :name :desert-dune
-  :category :desert
-  :family :orange
-  :brightness 0.325
-  :temperature 0.644
-  :saturation 0.546
-  :contrast 0.8
-  :mean-lightness 0.474
-  :hue-concentration 0.993
-  :tags #{"earth-tone" "monochrome" "orange"}}
+  {:hex ["#2E1E14" "#684826" "#AA7A40" "#DCB468" "#F8E8C2"]
+   :rgba [[46 30 20 255] [104 72 38 255] [170 122 64 255] [220 180 104 255] [248 232 194 255]]
+   :count 5
+   :name :desert-dune
+   :category :desert
+   :family :yellow
+   :brightness 0.325
+   :temperature 0.644
+   :saturation 0.663
+   :contrast 0.8
+   :mean-lightness 0.538
+   :hue-concentration 0.983
+   :tags #{"earth-tone" "monochrome" "orange" "yellow"}}
  :desert/sandstone
- {:hex ["#3A1E16" "#7A3E26" "#B86A40" "#E0A06A" "#F6DCB4"]
-  :rgba [[58 30 22 255] [122 62 38 255] [184 106 64 255] [224 160 106 255] [246 220 180 255]]
-  :count 5
-  :name :sandstone
-  :category :desert
-  :family :orange
-  :brightness 0.293
-  :temperature 0.666
-  :saturation 0.58
-  :contrast 0.722
-  :mean-lightness 0.488
-  :hue-concentration 0.989
-  :tags #{"canyon" "monochrome" "orange"}}
+  {:hex ["#3A1E16" "#7A3E26" "#B86A40" "#E0A06A" "#F6DCB4"]
+   :rgba [[58 30 22 255] [122 62 38 255] [184 106 64 255] [224 160 106 255] [246 220 180 255]]
+   :count 5
+   :name :sandstone
+   :category :desert
+   :family :orange
+   :brightness 0.293
+   :temperature 0.666
+   :saturation 0.659
+   :contrast 0.722
+   :mean-lightness 0.522
+   :hue-concentration 0.973
+   :tags #{"canyon" "earth-tone" "monochrome" "orange"}}
  :desert/wheat
- {:hex ["#44341C" "#8A6C36" "#CEA65C" "#EED694" "#FCF4D4"]
-  :rgba [[68 52 28 255] [138 108 54 255] [206 166 92 255] [238 214 148 255] [252 244 212 255]]
-  :count 5
-  :name :wheat
-  :category :desert
-  :family :orange
-  :brightness 0.44
-  :temperature 0.644
-  :saturation 0.597
-  :contrast 0.864
-  :mean-lightness 0.563
-  :hue-concentration 0.997
-  :tags #{"light" "monochrome" "orange"}}
+  {:hex ["#44341C" "#8A6C36" "#CEA65C" "#EED694" "#FCF4D4"]
+   :rgba [[68 52 28 255] [138 108 54 255] [206 166 92 255] [238 214 148 255] [252 244 212 255]]
+   :count 5
+   :name :wheat
+   :category :desert
+   :family :yellow
+   :brightness 0.44
+   :temperature 0.644
+   :saturation 0.672
+   :contrast 0.864
+   :mean-lightness 0.646
+   :hue-concentration 0.991
+   :tags #{"light" "monochrome" "orange" "yellow"}}
 
  ; Dessert
  :dessert/apple-pie
- {:hex ["#3A2012" "#7A4A20" "#BC8A3E" "#E6C078" "#F8E8C2"]
-  :rgba [[58 32 18 255] [122 74 32 255] [188 138 62 255] [230 192 120 255] [248 232 194 255]]
-  :count 5
-  :name :apple-pie
-  :category :dessert
-  :family :orange
-  :brightness 0.356
-  :temperature 0.665
-  :saturation 0.619
-  :contrast 0.796
-  :mean-lightness 0.499
-  :hue-concentration 0.991
-  :tags #{"dessert" "monochrome" "orange" "vivid" "warm"}}
+  {:hex ["#3A2012" "#7A4A20" "#BC8A3E" "#E6C078" "#F8E8C2"]
+   :rgba [[58 32 18 255] [122 74 32 255] [188 138 62 255] [230 192 120 255] [248 232 194 255]]
+   :count 5
+   :name :apple-pie
+   :category :dessert
+   :family :orange
+   :brightness 0.356
+   :temperature 0.665
+   :saturation 0.715
+   :contrast 0.796
+   :mean-lightness 0.569
+   :hue-concentration 0.973
+   :tags #{"dessert" "monochrome" "orange" "vivid" "warm"}}
  :dessert/blueberry
- {:hex ["#120E26" "#2A2858" "#4A4E9A" "#8688CC" "#D6D2EC"]
-  :rgba [[18 14 38 255] [42 40 88 255] [74 78 154 255] [134 136 204 255] [214 210 236 255]]
-  :count 5
-  :name :blueberry
-  :category :dessert
-  :family :blue
-  :brightness 0.212
-  :temperature 0.407
-  :saturation 0.4
-  :contrast 0.659
-  :mean-lightness 0.467
-  :hue-concentration 0.996
-  :tags #{"berry" "blue" "dessert" "low-contrast" "monochrome"}}
+  {:hex ["#120E26" "#2A2858" "#4A4E9A" "#8688CC" "#D6D2EC"]
+   :rgba [[18 14 38 255] [42 40 88 255] [74 78 154 255] [134 136 204 255] [214 210 236 255]]
+   :count 5
+   :name :blueberry
+   :category :dessert
+   :family :indigo
+   :brightness 0.212
+   :temperature 0.407
+   :saturation 0.486
+   :contrast 0.659
+   :mean-lightness 0.41
+   :hue-concentration 0.999
+   :tags #{"berry" "blue" "dessert" "indigo" "low-contrast" "monochrome"}}
  :dessert/brownie
- {:hex ["#1A0E08" "#382014" "#5E3622" "#8A5638" "#C09A6E"]
-  :rgba [[26 14 8 255] [56 32 20 255] [94 54 34 255] [138 86 56 255] [192 154 110 255]]
-  :count 5
-  :name :brownie
-  :category :dessert
-  :family :orange
-  :brightness 0.111
-  :temperature 0.609
-  :saturation 0.458
-  :contrast 0.349
-  :mean-lightness 0.288
-  :hue-concentration 0.997
-  :tags #{"chocolate" "dark" "dessert" "earth-tone" "low-contrast" "monochrome" "orange"}}
+  {:hex ["#1A0E08" "#382014" "#5E3622" "#8A5638" "#C09A6E"]
+   :rgba [[26 14 8 255] [56 32 20 255] [94 54 34 255] [138 86 56 255] [192 154 110 255]]
+   :count 5
+   :name :brownie
+   :category :dessert
+   :family :orange
+   :brightness 0.111
+   :temperature 0.609
+   :saturation 0.591
+   :contrast 0.349
+   :mean-lightness 0.31
+   :hue-concentration 0.992
+   :tags #{"chocolate" "dark" "dessert" "earth-tone" "low-contrast" "monochrome" "orange"}}
  :dessert/sherbert
- {:hex ["#F6B894" "#F8D0A8" "#F8E8BC" "#D4E4A8" "#B0E2CE"]
-  :rgba [[246 184 148 255] [248 208 168 255] [248 232 188 255] [212 228 168 255] [176 226 206 255]]
-  :count 5
-  :name :sherbert
-  :category :dessert
-  :family :yellow
-  :brightness 0.691
-  :temperature 0.599
-  :saturation 0.699
-  :contrast 0.253
-  :mean-lightness 0.802
-  :hue-concentration 0.772
-  :tags #{"citrus" "dessert" "light" "low-contrast" "pastel" "soft" "vivid" "yellow"}}
+  {:hex ["#F6B894" "#F8D0A8" "#F8E8BC" "#D4E4A8" "#B0E2CE"]
+   :rgba [[246 184 148 255] [248 208 168 255] [248 232 188 255] [212 228 168 255] [176 226 206 255]]
+   :count 5
+   :name :sherbert
+   :category :dessert
+   :family :yellow
+   :brightness 0.691
+   :temperature 0.599
+   :saturation 0.605
+   :contrast 0.253
+   :mean-lightness 0.864
+   :hue-concentration 0.815
+   :tags #{"citrus" "dessert" "light" "low-contrast" "pastel" "soft" "vivid" "yellow"}}
  :dessert/vanilla
- {:hex ["#6A5A3E" "#A89870" "#D6C69E" "#EEE4C8" "#FBF6EA"]
-  :rgba [[106 90 62 255] [168 152 112 255] [214 198 158 255] [238 228 200 255] [251 246 234 255]]
-  :count 5
-  :name :vanilla
-  :category :dessert
-  :family :orange
-  :brightness 0.54
-  :temperature 0.583
-  :saturation 0.424
-  :contrast 0.816
-  :mean-lightness 0.684
-  :hue-concentration 1.0
-  :tags #{"cream" "dessert" "light" "monochrome" "orange"}}
+  {:hex ["#6A5A3E" "#A89870" "#D6C69E" "#EEE4C8" "#FBF6EA"]
+   :rgba [[106 90 62 255] [168 152 112 255] [214 198 158 255] [238 228 200 255] [251 246 234 255]]
+   :count 5
+   :name :vanilla
+   :category :dessert
+   :family :yellow
+   :brightness 0.54
+   :temperature 0.583
+   :saturation 0.436
+   :contrast 0.816
+   :mean-lightness 0.741
+   :hue-concentration 0.998
+   :tags #{"cream" "dessert" "light" "monochrome" "orange" "pastel" "yellow"}}
  :dessert/wildberry
- {:hex ["#1E0C1E" "#481642" "#842A66" "#C04A8A" "#EC9CC4"]
-  :rgba [[30 12 30 255] [72 22 66 255] [132 42 102 255] [192 74 138 255] [236 156 196 255]]
-  :count 5
-  :name :wildberry
-  :category :dessert
-  :family :purple
-  :brightness 0.148
-  :temperature 0.551
-  :saturation 0.528
-  :contrast 0.45
-  :mean-lightness 0.38
-  :hue-concentration 0.98
-  :tags #{"berry" "dark" "dessert" "low-contrast" "monochrome" "purple"}}
+  {:hex ["#1E0C1E" "#481642" "#842A66" "#C04A8A" "#EC9CC4"]
+   :rgba [[30 12 30 255] [72 22 66 255] [132 42 102 255] [192 74 138 255] [236 156 196 255]]
+   :count 5
+   :name :wildberry
+   :category :dessert
+   :family :pink
+   :brightness 0.148
+   :temperature 0.551
+   :saturation 0.665
+   :contrast 0.45
+   :mean-lightness 0.357
+   :hue-concentration 0.977
+   :tags #{"berry" "dark" "dessert" "low-contrast" "monochrome" "pink" "purple"}}
 
  ; Fantasy
  :fantasy/adventurous
- {:hex ["#1C2818" "#3E4A24" "#766A2E" "#BC9040" "#E8D08C"]
-  :rgba [[28 40 24 255] [62 74 36 255] [118 106 46 255] [188 144 64 255] [232 208 140 255]]
-  :count 5
-  :name :adventurous
-  :category :fantasy
-  :family :yellow
-  :brightness 0.235
-  :temperature 0.625
-  :saturation 0.439
-  :contrast 0.623
-  :mean-lightness 0.377
-  :hue-concentration 0.931
-  :tags #{"earth-tone" "low-contrast" "monochrome" "quest" "yellow"}}
+  {:hex ["#1C2818" "#3E4A24" "#766A2E" "#BC9040" "#E8D08C"]
+   :rgba [[28 40 24 255] [62 74 36 255] [118 106 46 255] [188 144 64 255] [232 208 140 255]]
+   :count 5
+   :name :adventurous
+   :category :fantasy
+   :family :yellow
+   :brightness 0.235
+   :temperature 0.625
+   :saturation 0.655
+   :contrast 0.623
+   :mean-lightness 0.471
+   :hue-concentration 0.925
+   :tags #{"earth-tone" "low-contrast" "monochrome" "quest" "yellow"}}
  :fantasy/dragon-hoard
- {:hex ["#2A1C08" "#6E4A12" "#B8861E" "#E6C038" "#F8E89A"]
-  :rgba [[42 28 8 255] [110 74 18 255] [184 134 30 255] [230 192 56 255] [248 232 154 255]]
-  :count 5
-  :name :dragon-hoard
-  :category :fantasy
-  :family :orange
-  :brightness 0.343
-  :temperature 0.715
-  :saturation 0.753
-  :contrast 0.787
-  :mean-lightness 0.424
-  :hue-concentration 0.995
-  :tags #{"gold" "monochrome" "orange" "treasure" "vivid"}}
+  {:hex ["#2A1C08" "#6E4A12" "#B8861E" "#E6C038" "#F8E89A"]
+   :rgba [[42 28 8 255] [110 74 18 255] [184 134 30 255] [230 192 56 255] [248 232 154 255]]
+   :count 5
+   :name :dragon-hoard
+   :category :fantasy
+   :family :yellow
+   :brightness 0.343
+   :temperature 0.715
+   :saturation 0.847
+   :contrast 0.787
+   :mean-lightness 0.552
+   :hue-concentration 0.985
+   :tags #{"gold" "monochrome" "orange" "treasure" "vivid" "yellow"}}
  :fantasy/lavender-dusk
- {:hex ["#241C36" "#483862" "#7A60A2" "#B69AD8" "#EEE4FC"]
-  :rgba [[36 28 54 255] [72 56 98 255] [122 96 162 255] [182 154 216 255] [238 228 252 255]]
-  :count 5
-  :name :lavender-dusk
-  :category :fantasy
-  :family :indigo
-  :brightness 0.281
-  :temperature 0.448
-  :saturation 0.419
-  :contrast 0.792
-  :mean-lightness 0.527
-  :hue-concentration 0.999
-  :tags #{"dreamy" "indigo" "monochrome"}}
+  {:hex ["#241C36" "#483862" "#7A60A2" "#B69AD8" "#EEE4FC"]
+   :rgba [[36 28 54 255] [72 56 98 255] [122 96 162 255] [182 154 216 255] [238 228 252 255]]
+   :count 5
+   :name :lavender-dusk
+   :category :fantasy
+   :family :purple
+   :brightness 0.281
+   :temperature 0.448
+   :saturation 0.505
+   :contrast 0.792
+   :mean-lightness 0.49
+   :hue-concentration 0.999
+   :tags #{"dreamy" "indigo" "monochrome" "purple"}}
  :fantasy/lilac-field
- {:hex ["#2E1A38" "#5E2E72" "#9A4EB0" "#CE8EDC" "#F0DCF6"]
-  :rgba [[46 26 56 255] [94 46 114 255] [154 78 176 255] [206 142 220 255] [240 220 246 255]]
-  :count 5
-  :name :lilac-field
-  :category :fantasy
-  :family :indigo
-  :brightness 0.273
-  :temperature 0.472
-  :saturation 0.459
-  :contrast 0.748
-  :mean-lightness 0.519
-  :hue-concentration 0.998
-  :tags #{"dreamy" "indigo" "monochrome"}}
+  {:hex ["#2E1A38" "#5E2E72" "#9A4EB0" "#CE8EDC" "#F0DCF6"]
+   :rgba [[46 26 56 255] [94 46 114 255] [154 78 176 255] [206 142 220 255] [240 220 246 255]]
+   :count 5
+   :name :lilac-field
+   :category :fantasy
+   :family :purple
+   :brightness 0.273
+   :temperature 0.472
+   :saturation 0.602
+   :contrast 0.748
+   :mean-lightness 0.491
+   :hue-concentration 0.998
+   :tags #{"dreamy" "indigo" "monochrome" "purple"}}
  :fantasy/royal-plum
- {:hex ["#28122A" "#522254" "#843A88" "#C270C4" "#F4D8F0"]
-  :rgba [[40 18 42 255] [82 34 84 255] [132 58 136 255] [194 112 196 255] [244 216 240 255]]
-  :count 5
-  :name :royal-plum
-  :category :fantasy
-  :family :purple
-  :brightness 0.232
-  :temperature 0.498
-  :saturation 0.44
-  :contrast 0.736
-  :mean-lightness 0.447
-  :hue-concentration 0.996
-  :tags #{"monochrome" "purple" "regal"}}
+  {:hex ["#28122A" "#522254" "#843A88" "#C270C4" "#F4D8F0"]
+   :rgba [[40 18 42 255] [82 34 84 255] [132 58 136 255] [194 112 196 255] [244 216 240 255]]
+   :count 5
+   :name :royal-plum
+   :category :fantasy
+   :family :purple
+   :brightness 0.232
+   :temperature 0.498
+   :saturation 0.588
+   :contrast 0.736
+   :mean-lightness 0.434
+   :hue-concentration 0.998
+   :tags #{"monochrome" "purple" "regal"}}
  :fantasy/tavern
- {:hex ["#1E120C" "#3E2616" "#6E4424" "#A87038" "#D8B074"]
-  :rgba [[30 18 12 255] [62 38 22 255] [110 68 36 255] [168 112 56 255] [216 176 116 255]]
-  :count 5
-  :name :tavern
-  :category :fantasy
-  :family :orange
-  :brightness 0.156
-  :temperature 0.635
-  :saturation 0.495
-  :contrast 0.462
-  :mean-lightness 0.325
-  :hue-concentration 0.995
-  :tags #{"cozy" "dark" "earth-tone" "low-contrast" "monochrome" "orange" "wood"}}
+  {:hex ["#1E120C" "#3E2616" "#6E4424" "#A87038" "#D8B074"]
+   :rgba [[30 18 12 255] [62 38 22 255] [110 68 36 255] [168 112 56 255] [216 176 116 255]]
+   :count 5
+   :name :tavern
+   :category :fantasy
+   :family :orange
+   :brightness 0.156
+   :temperature 0.635
+   :saturation 0.643
+   :contrast 0.462
+   :mean-lightness 0.367
+   :hue-concentration 0.991
+   :tags #{"cozy" "dark" "earth-tone" "low-contrast" "monochrome" "orange" "wood"}}
  :fantasy/violet-mist
- {:hex ["#222038" "#444060" "#7A72A0" "#B4ACD0" "#ECE8F4"]
-  :rgba [[34 32 56 255] [68 64 96 255] [122 114 160 255] [180 172 208 255] [236 232 244 255]]
-  :count 5
-  :name :violet-mist
-  :category :fantasy
-  :family :blue
-  :brightness 0.304
-  :temperature 0.451
-  :saturation 0.26
-  :contrast 0.804
-  :mean-lightness 0.54
-  :hue-concentration 0.995
-  :tags #{"blue" "misty" "monochrome" "muted"}}
+  {:hex ["#222038" "#444060" "#7A72A0" "#B4ACD0" "#ECE8F4"]
+   :rgba [[34 32 56 255] [68 64 96 255] [122 114 160 255] [180 172 208 255] [236 232 244 255]]
+   :count 5
+   :name :violet-mist
+   :category :fantasy
+   :family :indigo
+   :brightness 0.304
+   :temperature 0.451
+   :saturation 0.334
+   :contrast 0.804
+   :mean-lightness 0.515
+   :hue-concentration 0.997
+   :tags #{"blue" "indigo" "misty" "monochrome" "muted"}}
 
  ; Floral
  :floral/blush
- {:hex ["#3A1C22" "#743644" "#B86076" "#EA9AAE" "#FFE4EA"]
-  :rgba [[58 28 34 255] [116 54 68 255] [184 96 118 255] [234 154 174 255] [255 228 234 255]]
-  :count 5
-  :name :blush
-  :category :floral
-  :family :red
-  :brightness 0.31
-  :temperature 0.586
-  :saturation 0.55
-  :contrast 0.808
-  :mean-lightness 0.552
-  :hue-concentration 1.0
-  :tags #{"monochrome" "red"}}
+  {:hex ["#3A1C22" "#743644" "#B86076" "#EA9AAE" "#FFE4EA"]
+   :rgba [[58 28 34 255] [116 54 68 255] [184 96 118 255] [234 154 174 255] [255 228 234 255]]
+   :count 5
+   :name :blush
+   :category :floral
+   :family :red
+   :brightness 0.31
+   :temperature 0.586
+   :saturation 0.585
+   :contrast 0.808
+   :mean-lightness 0.525
+   :hue-concentration 0.999
+   :tags #{"monochrome" "red"}}
  :floral/cherry-bloom
- {:hex ["#421624" "#842A48" "#CE527A" "#F698BA" "#FFE6EC"]
-  :rgba [[66 22 36 255] [132 42 72 255] [206 82 122 255] [246 152 186 255] [255 230 236 255]]
-  :count 5
-  :name :cherry-bloom
-  :category :floral
-  :family :pink
-  :brightness 0.318
-  :temperature 0.599
-  :saturation 0.683
-  :contrast 0.821
-  :mean-lightness 0.562
-  :hue-concentration 0.999
-  :tags #{"monochrome" "pink" "vivid"}}
+  {:hex ["#421624" "#842A48" "#CE527A" "#F698BA" "#FFE6EC"]
+   :rgba [[66 22 36 255] [132 42 72 255] [206 82 122 255] [246 152 186 255] [255 230 236 255]]
+   :count 5
+   :name :cherry-bloom
+   :category :floral
+   :family :red
+   :brightness 0.318
+   :temperature 0.599
+   :saturation 0.742
+   :contrast 0.821
+   :mean-lightness 0.532
+   :hue-concentration 0.999
+   :tags #{"monochrome" "pink" "red" "vivid"}}
  :floral/rhododendron
- {:hex ["#2A1024" "#5E1E4E" "#9E3478" "#D870A0" "#F4C2DA"]
-  :rgba [[42 16 36 255] [94 30 78 255] [158 52 120 255] [216 112 160 255] [244 194 218 255]]
-  :count 5
-  :name :rhododendron
-  :category :floral
-  :family :purple
-  :brightness 0.215
-  :temperature 0.556
-  :saturation 0.547
-  :contrast 0.619
-  :mean-lightness 0.454
-  :hue-concentration 0.991
-  :tags #{"flower" "low-contrast" "monochrome" "purple"}}
+  {:hex ["#2A1024" "#5E1E4E" "#9E3478" "#D870A0" "#F4C2DA"]
+   :rgba [[42 16 36 255] [94 30 78 255] [158 52 120 255] [216 112 160 255] [244 194 218 255]]
+   :count 5
+   :name :rhododendron
+   :category :floral
+   :family :pink
+   :brightness 0.215
+   :temperature 0.556
+   :saturation 0.663
+   :contrast 0.619
+   :mean-lightness 0.431
+   :hue-concentration 0.991
+   :tags #{"flower" "low-contrast" "monochrome" "pink" "purple"}}
  :floral/rose-garden
- {:hex ["#361622" "#682A40" "#AC4E70" "#E28AA6" "#FCE0E8"]
-  :rgba [[54 22 34 255] [104 42 64 255] [172 78 112 255] [226 138 166 255] [252 224 232 255]]
-  :count 5
-  :name :rose-garden
-  :category :floral
-  :family :pink
-  :brightness 0.278
-  :temperature 0.578
-  :saturation 0.53
-  :contrast 0.784
-  :mean-lightness 0.515
-  :hue-concentration 0.999
-  :tags #{"monochrome" "pink"}}
+  {:hex ["#361622" "#682A40" "#AC4E70" "#E28AA6" "#FCE0E8"]
+   :rgba [[54 22 34 255] [104 42 64 255] [172 78 112 255] [226 138 166 255] [252 224 232 255]]
+   :count 5
+   :name :rose-garden
+   :category :floral
+   :family :pink
+   :brightness 0.278
+   :temperature 0.578
+   :saturation 0.607
+   :contrast 0.784
+   :mean-lightness 0.488
+   :hue-concentration 1.0
+   :tags #{"monochrome" "pink"}}
 
  ; Forest
  :forest/alien-jungle
- {:hex ["#121810" "#3A2252" "#2EA658" "#7AF268" "#EEFFD6"]
-  :rgba [[18 24 16 255] [58 34 82 255] [46 166 88 255] [122 242 104 255] [238 255 214 255]]
-  :count 5
-  :name :alien-jungle
-  :category :forest
-  :family :green
-  :brightness 0.39
-  :temperature 0.491
-  :saturation 0.604
-  :contrast 0.937
-  :mean-lightness 0.464
-  :hue-concentration 0.676
-  :tags #{"alien" "green" "high-contrast" "neon" "organic" "vivid"}}
+  {:hex ["#121810" "#3A2252" "#2EA658" "#7AF268" "#EEFFD6"]
+   :rgba [[18 24 16 255] [58 34 82 255] [46 166 88 255] [122 242 104 255] [238 255 214 255]]
+   :count 5
+   :name :alien-jungle
+   :category :forest
+   :family :green
+   :brightness 0.39
+   :temperature 0.491
+   :saturation 0.708
+   :contrast 0.937
+   :mean-lightness 0.541
+   :hue-concentration 0.678
+   :tags #{"alien" "green" "high-contrast" "neon" "organic" "vivid"}}
  :forest/emerald-canopy
- {:hex ["#16281C" "#245232" "#3A7E4A" "#5CAE68" "#CCF2C2"]
-  :rgba [[22 40 28 255] [36 82 50 255] [58 126 74 255] [92 174 104 255] [204 242 194 255]]
-  :count 5
-  :name :emerald-canopy
-  :category :forest
-  :family :green
-  :brightness 0.277
-  :temperature 0.485
-  :saturation 0.407
-  :contrast 0.785
-  :mean-lightness 0.418
-  :hue-concentration 0.973
-  :tags #{"earth-tone" "green" "monochrome"}}
+  {:hex ["#16281C" "#245232" "#3A7E4A" "#5CAE68" "#CCF2C2"]
+   :rgba [[22 40 28 255] [36 82 50 255] [58 126 74 255] [92 174 104 255] [204 242 194 255]]
+   :count 5
+   :name :emerald-canopy
+   :category :forest
+   :family :green
+   :brightness 0.277
+   :temperature 0.485
+   :saturation 0.597
+   :contrast 0.785
+   :mean-lightness 0.498
+   :hue-concentration 0.995
+   :tags #{"earth-tone" "green" "monochrome"}}
  :forest/fern
- {:hex ["#0E1A10" "#1E3A1E" "#356B32" "#6FB05A" "#CDEBA6"]
-  :rgba [[14 26 16 255] [30 58 30 255] [53 107 50 255] [111 176 90 255] [205 235 166 255]]
-  :count 5
-  :name :fern
-  :category :forest
-  :family :green
-  :brightness 0.252
-  :temperature 0.524
-  :saturation 0.393
-  :contrast 0.743
-  :mean-lightness 0.373
-  :hue-concentration 0.96
-  :tags #{"earth-tone" "green" "monochrome"}}
+  {:hex ["#0E1A10" "#1E3A1E" "#356B32" "#6FB05A" "#CDEBA6"]
+   :rgba [[14 26 16 255] [30 58 30 255] [53 107 50 255] [111 176 90 255] [205 235 166 255]]
+   :count 5
+   :name :fern
+   :category :forest
+   :family :green
+   :brightness 0.252
+   :temperature 0.524
+   :saturation 0.567
+   :contrast 0.743
+   :mean-lightness 0.45
+   :hue-concentration 0.99
+   :tags #{"earth-tone" "green" "monochrome"}}
  :forest/hungry-caterpillar
- {:hex ["#1A2A10" "#356B1E" "#6CB02E" "#B6D84A" "#E8443A"]
-  :rgba [[26 42 16 255] [53 107 30 255] [108 176 46 255] [182 216 74 255] [232 68 58 255]]
-  :count 5
-  :name :hungry-caterpillar
-  :category :forest
-  :family :green
-  :brightness 0.258
-  :temperature 0.648
-  :saturation 0.606
-  :contrast 0.576
-  :mean-lightness 0.391
-  :hue-concentration 0.785
-  :tags #{"green" "low-contrast" "storybook" "vivid" "whimsical"}}
+  {:hex ["#1A2A10" "#356B1E" "#6CB02E" "#B6D84A" "#E8443A"]
+   :rgba [[26 42 16 255] [53 107 30 255] [108 176 46 255] [182 216 74 255] [232 68 58 255]]
+   :count 5
+   :name :hungry-caterpillar
+   :category :forest
+   :family :yellow
+   :brightness 0.258
+   :temperature 0.648
+   :saturation 0.824
+   :contrast 0.576
+   :mean-lightness 0.511
+   :hue-concentration 0.792
+   :tags #{"green" "low-contrast" "storybook" "vivid" "whimsical" "yellow"}}
  :forest/jungle
- {:hex ["#0C1A12" "#183A26" "#2A623E" "#4C9660" "#C2ECBC"]
-  :rgba [[12 26 18 255] [24 58 38 255] [42 98 62 255] [76 150 96 255] [194 236 188 255]]
-  :count 5
-  :name :jungle
-  :category :forest
-  :family :green
-  :brightness 0.226
-  :temperature 0.479
-  :saturation 0.414
-  :contrast 0.742
-  :mean-lightness 0.357
-  :hue-concentration 0.972
-  :tags #{"earth-tone" "green" "monochrome"}}
+  {:hex ["#0C1A12" "#183A26" "#2A623E" "#4C9660" "#C2ECBC"]
+   :rgba [[12 26 18 255] [24 58 38 255] [42 98 62 255] [76 150 96 255] [194 236 188 255]]
+   :count 5
+   :name :jungle
+   :category :forest
+   :family :green
+   :brightness 0.226
+   :temperature 0.479
+   :saturation 0.596
+   :contrast 0.742
+   :mean-lightness 0.424
+   :hue-concentration 0.995
+   :tags #{"earth-tone" "green" "monochrome"}}
  :forest/moonlit-forest
- {:hex ["#121C14" "#223424" "#3A563C" "#668A62" "#D2E4CD"]
-  :rgba [[18 28 20 255] [34 52 36 255] [58 86 60 255] [102 138 98 255] [210 228 205 255]]
-  :count 5
-  :name :moonlit-forest
-  :category :forest
-  :family :green
-  :brightness 0.215
-  :temperature 0.501
-  :saturation 0.218
-  :contrast 0.726
-  :mean-lightness 0.371
-  :hue-concentration 0.986
-  :tags #{"earth-tone" "green" "monochrome" "muted"}}
+  {:hex ["#121C14" "#223424" "#3A563C" "#668A62" "#D2E4CD"]
+   :rgba [[18 28 20 255] [34 52 36 255] [58 86 60 255] [102 138 98 255] [210 228 205 255]]
+   :count 5
+   :name :moonlit-forest
+   :category :forest
+   :family :green
+   :brightness 0.215
+   :temperature 0.501
+   :saturation 0.349
+   :contrast 0.726
+   :mean-lightness 0.41
+   :hue-concentration 0.997
+   :tags #{"earth-tone" "green" "monochrome" "muted"}}
  :forest/moss-garden
- {:hex ["#1A1E12" "#36461E" "#5C7430" "#8AA852" "#DCE8B4"]
-  :rgba [[26 30 18 255] [54 70 30 255] [92 116 48 255] [138 168 82 255] [220 232 180 255]]
-  :count 5
-  :name :moss-garden
-  :category :forest
-  :family :green
-  :brightness 0.263
-  :temperature 0.567
-  :saturation 0.388
-  :contrast 0.75
-  :mean-lightness 0.382
-  :hue-concentration 0.998
-  :tags #{"earth-tone" "green" "monochrome"}}
+  {:hex ["#1A1E12" "#36461E" "#5C7430" "#8AA852" "#DCE8B4"]
+   :rgba [[26 30 18 255] [54 70 30 255] [92 116 48 255] [138 168 82 255] [220 232 180 255]]
+   :count 5
+   :name :moss-garden
+   :category :forest
+   :family :yellow
+   :brightness 0.263
+   :temperature 0.567
+   :saturation 0.605
+   :contrast 0.75
+   :mean-lightness 0.477
+   :hue-concentration 0.998
+   :tags #{"earth-tone" "green" "monochrome" "yellow"}}
  :forest/pine-shadow
- {:hex ["#0E120E" "#1A2A1E" "#2C4A36" "#58805C" "#BEDCB4"]
-  :rgba [[14 18 14 255] [26 42 30 255] [44 74 54 255] [88 128 92 255] [190 220 180 255]]
-  :count 5
-  :name :pine-shadow
-  :category :forest
-  :family :green
-  :brightness 0.184
-  :temperature 0.497
-  :saturation 0.233
-  :contrast 0.649
-  :mean-lightness 0.327
-  :hue-concentration 0.97
-  :tags #{"dark" "earth-tone" "green" "low-contrast" "monochrome" "muted"}}
+  {:hex ["#0E120E" "#1A2A1E" "#2C4A36" "#58805C" "#BEDCB4"]
+   :rgba [[14 18 14 255] [26 42 30 255] [44 74 54 255] [88 128 92 255] [190 220 180 255]]
+   :count 5
+   :name :pine-shadow
+   :category :forest
+   :family :green
+   :brightness 0.184
+   :temperature 0.497
+   :saturation 0.369
+   :contrast 0.649
+   :mean-lightness 0.367
+   :hue-concentration 0.993
+   :tags #{"dark" "earth-tone" "green" "low-contrast" "monochrome" "muted"}}
  :forest/rainforest
- {:hex ["#0A1814" "#12362C" "#20604C" "#489C7A" "#CAF2DA"]
-  :rgba [[10 24 20 255] [18 54 44 255] [32 96 76 255] [72 156 122 255] [202 242 218 255]]
-  :count 5
-  :name :rainforest
-  :category :forest
-  :family :green
-  :brightness 0.241
-  :temperature 0.443
-  :saturation 0.477
-  :contrast 0.804
-  :mean-lightness 0.355
-  :hue-concentration 0.991
-  :tags #{"earth-tone" "green" "monochrome"}}
+  {:hex ["#0A1814" "#12362C" "#20604C" "#489C7A" "#CAF2DA"]
+   :rgba [[10 24 20 255] [18 54 44 255] [32 96 76 255] [72 156 122 255] [202 242 218 255]]
+   :count 5
+   :name :rainforest
+   :category :forest
+   :family :teal
+   :brightness 0.241
+   :temperature 0.443
+   :saturation 0.671
+   :contrast 0.804
+   :mean-lightness 0.428
+   :hue-concentration 0.994
+   :tags #{"earth-tone" "green" "monochrome" "teal"}}
+
+ ; Lgbtq
+ :lgbtq/agender
+  {:hex ["#000000" "#B9B9B9" "#FFFFFF" "#BAF484" "#FFFFFF" "#B9B9B9" "#000000"]
+   :rgba [[0 0 0 255] [185 185 185 255] [255 255 255 255] [186 244 132 255] [255 255 255 255] [185 185 185 255] [0 0 0 255]]
+   :count 7
+   :name :agender
+   :category :lgbtq
+   :family :neutral
+   :brightness 0.534
+   :temperature 0.515
+   :saturation 0.094
+   :contrast 1.0
+   :mean-lightness 0.629
+   :hue-concentration 1.0
+   :tags #{"agender" "high-contrast" "lgbtq" "light" "muted" "neutral"}}
+ :lgbtq/aromantic
+  {:hex ["#3DA542" "#A8D582" "#FFFFFF" "#A9A9A9" "#000000"]
+   :rgba [[61 165 66 255] [168 213 130 255] [255 255 255 255] [169 169 169 255] [0 0 0 255]]
+   :count 5
+   :name :aromantic
+   :category :lgbtq
+   :family :green
+   :brightness 0.451
+   :temperature 0.513
+   :saturation 0.276
+   :contrast 1.0
+   :mean-lightness 0.62
+   :hue-concentration 0.991
+   :tags #{"aromantic" "green" "high-contrast" "lgbtq" "light" "monochrome" "muted"}}
+ :lgbtq/asexual
+  {:hex ["#000000" "#A4A4A4" "#FFFFFF" "#810081"]
+   :rgba [[0 0 0 255] [164 164 164 255] [255 255 255 255] [129 0 129 255]]
+   :count 4
+   :name :asexual
+   :category :lgbtq
+   :family :purple
+   :brightness 0.358
+   :temperature 0.5
+   :saturation 0.25
+   :contrast 1.0
+   :mean-lightness 0.494
+   :hue-concentration 1.0
+   :tags #{"asexual" "high-contrast" "lgbtq" "monochrome" "muted" "purple"}}
+ :lgbtq/bisexual
+  {:hex ["#D60270" "#D60270" "#9B4F96" "#0038A8" "#0038A8"]
+   :rgba [[214 2 112 255] [214 2 112 255] [155 79 150 255] [0 56 168 255] [0 56 168 255]]
+   :count 5
+   :name :bisexual
+   :category :lgbtq
+   :family :purple
+   :brightness 0.114
+   :temperature 0.45
+   :saturation 0.909
+   :contrast 0.099
+   :mean-lightness 0.39
+   :hue-concentration 0.732
+   :tags #{"bisexual" "dark" "lgbtq" "low-contrast" "purple" "vivid"}}
+ :lgbtq/demigender
+  {:hex ["#7F7F7F" "#C4C4C4" "#FBFF75" "#FFFFFF" "#FBFF75" "#C4C4C4" "#7F7F7F"]
+   :rgba [[127 127 127 255] [196 196 196 255] [251 255 117 255] [255 255 255 255] [251 255 117 255] [196 196 196 255] [127 127 127 255]]
+   :count 7
+   :name :demigender
+   :category :lgbtq
+   :family :yellow
+   :brightness 0.628
+   :temperature 0.575
+   :saturation 0.286
+   :contrast 0.788
+   :mean-lightness 0.799
+   :hue-concentration 1.0
+   :tags #{"demigender" "lgbtq" "light" "monochrome" "muted" "nonbinary-spectrum" "pastel" "yellow"}}
+ :lgbtq/demisexual
+  {:hex ["#FFFFFF" "#810081" "#A4A4A4" "#000000"]
+   :rgba [[255 255 255 255] [129 0 129 255] [164 164 164 255] [0 0 0 255]]
+   :count 4
+   :name :demisexual
+   :category :lgbtq
+   :family :purple
+   :brightness 0.358
+   :temperature 0.5
+   :saturation 0.25
+   :contrast 1.0
+   :mean-lightness 0.494
+   :hue-concentration 1.0
+   :tags #{"asexual-spectrum" "demisexual" "high-contrast" "lgbtq" "monochrome" "muted" "purple"}}
+ :lgbtq/genderfluid
+  {:hex ["#FF76A4" "#FFFFFF" "#C011D7" "#000000" "#2F3CBE"]
+   :rgba [[255 118 164 255] [255 255 255 255] [192 17 215 255] [0 0 0 255] [47 60 190 255]]
+   :count 5
+   :name :genderfluid
+   :category :lgbtq
+   :family :purple
+   :brightness 0.322
+   :temperature 0.471
+   :saturation 0.556
+   :contrast 1.0
+   :mean-lightness 0.496
+   :hue-concentration 0.807
+   :tags #{"genderfluid" "high-contrast" "lgbtq" "purple" "vivid"}}
+ :lgbtq/genderqueer
+  {:hex ["#B57EDC" "#FFFFFF" "#4A8123"]
+   :rgba [[181 126 220 255] [255 255 255 255] [74 129 35 255]]
+   :count 3
+   :name :genderqueer
+   :category :lgbtq
+   :family :green
+   :brightness 0.491
+   :temperature 0.5
+   :saturation 0.518
+   :contrast 0.827
+   :mean-lightness 0.701
+   :hue-concentration 0.167
+   :tags #{"genderqueer" "green" "lgbtq" "light" "vivid"}}
+ :lgbtq/intersex
+  {:hex ["#FFD800" "#7902AA"]
+   :rgba [[255 216 0 255] [121 2 170 255]]
+   :count 2
+   :name :intersex
+   :category :lgbtq
+   :family :red
+   :brightness 0.387
+   :temperature 0.702
+   :saturation 0.998
+   :contrast 0.634
+   :mean-lightness 0.595
+   :hue-concentration 0.317
+   :tags #{"high-contrast" "intersex" "lgbtq" "low-contrast" "red" "vivid"}}
+ :lgbtq/lesbian
+  {:hex ["#D62900" "#FF9B55" "#FFFFFF" "#D461A6" "#A50062"]
+   :rgba [[214 41 0 255] [255 155 85 255] [255 255 255 255] [212 97 166 255] [165 0 98 255]]
+   :count 5
+   :name :lesbian
+   :category :lgbtq
+   :family :red
+   :brightness 0.391
+   :temperature 0.695
+   :saturation 0.717
+   :contrast 0.911
+   :mean-lightness 0.626
+   :hue-concentration 0.924
+   :tags #{"high-contrast" "lesbian" "lgbtq" "monochrome" "red" "vivid" "warm"}}
+ :lgbtq/nonbinary
+  {:hex ["#FCF434" "#FFFFFF" "#9C59D1" "#2D2D2D"]
+   :rgba [[252 244 52 255] [255 255 255 255] [156 89 209 255] [45 45 45 255]]
+   :count 4
+   :name :nonbinary
+   :category :lgbtq
+   :family :orange
+   :brightness 0.518
+   :temperature 0.572
+   :saturation 0.407
+   :contrast 0.974
+   :mean-lightness 0.658
+   :hue-concentration 0.252
+   :tags #{"high-contrast" "lgbtq" "light" "nonbinary" "orange" "vivid"}}
+ :lgbtq/pansexual
+  {:hex ["#FF218C" "#FFD800" "#21B1FF"]
+   :rgba [[255 33 140 255] [255 216 0 255] [33 177 255 255]]
+   :count 3
+   :name :pansexual
+   :category :lgbtq
+   :family :red
+   :brightness 0.445
+   :temperature 0.597
+   :saturation 1.0
+   :contrast 0.461
+   :mean-lightness 0.708
+   :hue-concentration 0.287
+   :tags #{"high-contrast" "lgbtq" "light" "low-contrast" "pansexual" "red" "vivid"}}
+ :lgbtq/polysexual
+  {:hex ["#F61CB9" "#07D569" "#1C92F6"]
+   :rgba [[246 28 185 255] [7 213 105 255] [28 146 246 255]]
+   :count 3
+   :name :polysexual
+   :category :lgbtq
+   :family :blue
+   :brightness 0.333
+   :temperature 0.333
+   :saturation 0.974
+   :contrast 0.247
+   :mean-lightness 0.635
+   :hue-concentration 0.241
+   :tags #{"blue" "lgbtq" "low-contrast" "polysexual" "vivid"}}
+ :lgbtq/pride
+  {:hex ["#FFFFFF" "#FFAFC8" "#74D7EE" "#613915" "#000000" "#E40303" "#FF8C00" "#FFED00" "#008026" "#004DFF" "#750787"]
+   :rgba [[255 255 255 255] [255 175 200 255] [116 215 238 255] [97 57 21 255] [0 0 0 255] [228 3 3 255] [255 140 0 255] [255 237 0 255] [0 128 38 255] [0 77 255 255] [117 7 135 255]]
+   :count 11
+   :name :pride
+   :category :lgbtq
+   :family :red
+   :brightness 0.357
+   :temperature 0.577
+   :saturation 0.776
+   :contrast 1.0
+   :mean-lightness 0.56
+   :hue-concentration 0.327
+   :tags #{"high-contrast" "inclusive" "lgbtq" "neon" "progress" "rainbow" "red" "vivid"}}
+ :lgbtq/queer
+  {:hex ["#000000" "#9AD9EA" "#FFFFFF" "#BABABA" "#B57EDC"]
+   :rgba [[0 0 0 255] [154 217 234 255] [255 255 255 255] [186 186 186 255] [181 126 220 255]]
+   :count 5
+   :name :queer
+   :category :lgbtq
+   :family :blue
+   :brightness 0.483
+   :temperature 0.453
+   :saturation 0.243
+   :contrast 1.0
+   :mean-lightness 0.64
+   :hue-concentration 0.803
+   :tags #{"blue" "high-contrast" "lgbtq" "light" "muted" "queer"}}
+ :lgbtq/rainbow
+  {:hex ["#E40303" "#FF8C00" "#FFED00" "#008026" "#004DFF" "#750787"]
+   :rgba [[228 3 3 255] [255 140 0 255] [255 237 0 255] [0 128 38 255] [0 77 255 255] [117 7 135 255]]
+   :count 6
+   :name :rainbow
+   :category :lgbtq
+   :family :red
+   :brightness 0.287
+   :temperature 0.639
+   :saturation 0.995
+   :contrast 0.761
+   :mean-lightness 0.545
+   :hue-concentration 0.298
+   :tags #{"high-contrast" "lgbtq" "rainbow" "red" "vivid"}}
+ :lgbtq/transgender
+  {:hex ["#55CDFC" "#FFFFFF" "#F7A8B8"]
+   :rgba [[85 205 252 255] [255 255 255 255] [247 168 184 255]]
+   :count 3
+   :name :transgender
+   :category :lgbtq
+   :family :purple
+   :brightness 0.68
+   :temperature 0.432
+   :saturation 0.602
+   :contrast 0.488
+   :mean-lightness 0.848
+   :hue-concentration 0.412
+   :tags #{"lgbtq" "light" "low-contrast" "pastel" "purple" "transgender"}}
+ :lgbtq/two-spirit
+  {:hex ["#FF0000" "#FF8700" "#FFEF00" "#00C000" "#0000FF" "#894FC6" "#FF69B4" "#964B00" "#000000"]
+   :rgba [[255 0 0 255] [255 135 0 255] [255 239 0 255] [0 192 0 255] [0 0 255 255] [137 79 198 255] [255 105 180 255] [150 75 0 255] [0 0 0 255]]
+   :count 9
+   :name :two-spirit
+   :category :lgbtq
+   :family :red
+   :brightness 0.277
+   :temperature 0.647
+   :saturation 0.849
+   :contrast 0.83
+   :mean-lightness 0.518
+   :hue-concentration 0.45
+   :tags #{"indigenous" "lgbtq" "rainbow" "red" "two-spirit" "vivid"}}
 
  ; Monochrome
  :monochrome/charcoal
- {:hex ["#121214" "#2A2A30" "#52525C" "#8E8E9C" "#E8E8EE"]
-  :rgba [[18 18 20 255] [42 42 48 255] [82 82 92 255] [142 142 156 255] [232 232 238 255]]
-  :count 5
-  :name :charcoal
-  :category :monochrome
-  :family :neutral
-  :brightness 0.24
-  :temperature 0.485
-  :saturation 0.079
-  :contrast 0.804
-  :mean-lightness 0.42
-  :hue-concentration 1.0
-  :tags #{"grayscale" "muted" "neutral"}}
+  {:hex ["#121214" "#2A2A30" "#52525C" "#8E8E9C" "#E8E8EE"]
+   :rgba [[18 18 20 255] [42 42 48 255] [82 82 92 255] [142 142 156 255] [232 232 238 255]]
+   :count 5
+   :name :charcoal
+   :category :monochrome
+   :family :neutral
+   :brightness 0.24
+   :temperature 0.485
+   :saturation 0.099
+   :contrast 0.804
+   :mean-lightness 0.419
+   :hue-concentration 1.0
+   :tags #{"grayscale" "muted" "neutral"}}
  :monochrome/fog
- {:hex ["#34383E" "#5E6670" "#8A94A0" "#C2CAD4" "#F6F8FA"]
-  :rgba [[52 56 62 255] [94 102 112 255] [138 148 160 255] [194 202 212 255] [246 248 250 255]]
-  :count 5
-  :name :fog
-  :category :monochrome
-  :family :neutral
-  :brightness 0.396
-  :temperature 0.472
-  :saturation 0.148
-  :contrast 0.897
-  :mean-lightness 0.596
-  :hue-concentration 0.999
-  :tags #{"muted" "neutral"}}
+  {:hex ["#34383E" "#5E6670" "#8A94A0" "#C2CAD4" "#F6F8FA"]
+   :rgba [[52 56 62 255] [94 102 112 255] [138 148 160 255] [194 202 212 255] [246 248 250 255]]
+   :count 5
+   :name :fog
+   :category :monochrome
+   :family :blue
+   :brightness 0.396
+   :temperature 0.472
+   :saturation 0.196
+   :contrast 0.897
+   :mean-lightness 0.611
+   :hue-concentration 0.998
+   :tags #{"blue" "monochrome" "muted" "neutral"}}
  :monochrome/granite
- {:hex ["#18181C" "#3A3C40" "#666870" "#A4A8B0" "#F0F2F6"]
-  :rgba [[24 24 28 255] [58 60 64 255] [102 104 112 255] [164 168 176 255] [240 242 246 255]]
-  :count 5
-  :name :granite
-  :category :monochrome
-  :family :neutral
-  :brightness 0.294
-  :temperature 0.485
-  :saturation 0.099
-  :contrast 0.878
-  :mean-lightness 0.476
-  :hue-concentration 0.992
-  :tags #{"grayscale" "muted" "neutral"}}
+  {:hex ["#18181C" "#3A3C40" "#666870" "#A4A8B0" "#F0F2F6"]
+   :rgba [[24 24 28 255] [58 60 64 255] [102 104 112 255] [164 168 176 255] [240 242 246 255]]
+   :count 5
+   :name :granite
+   :category :monochrome
+   :family :neutral
+   :brightness 0.294
+   :temperature 0.485
+   :saturation 0.12
+   :contrast 0.878
+   :mean-lightness 0.484
+   :hue-concentration 0.996
+   :tags #{"grayscale" "muted" "neutral"}}
  :monochrome/modern-industrial
- {:hex ["#1A1C1E" "#34383C" "#5A6068" "#8E969E" "#CED4DA"]
-  :rgba [[26 28 30 255] [52 56 60 255] [90 96 104 255] [142 150 158 255] [206 212 218 255]]
-  :count 5
-  :name :modern-industrial
-  :category :monochrome
-  :family :neutral
-  :brightness 0.224
-  :temperature 0.479
-  :saturation 0.086
-  :contrast 0.641
-  :mean-lightness 0.426
-  :hue-concentration 1.0
-  :tags #{"grayscale" "industrial" "low-contrast" "muted" "neutral"}}
+  {:hex ["#1A1C1E" "#34383C" "#5A6068" "#8E969E" "#CED4DA"]
+   :rgba [[26 28 30 255] [52 56 60 255] [90 96 104 255] [142 150 158 255] [206 212 218 255]]
+   :count 5
+   :name :modern-industrial
+   :category :monochrome
+   :family :neutral
+   :brightness 0.224
+   :temperature 0.479
+   :saturation 0.131
+   :contrast 0.641
+   :mean-lightness 0.44
+   :hue-concentration 0.999
+   :tags #{"grayscale" "industrial" "low-contrast" "muted" "neutral"}}
  :monochrome/silver-morning
- {:hex ["#3C424C" "#687482" "#9AA8B8" "#D2DCE6" "#FAFCFF"]
-  :rgba [[60 66 76 255] [104 116 130 255] [154 168 184 255] [210 220 230 255] [250 252 255 255]]
-  :count 5
-  :name :silver-morning
-  :category :monochrome
-  :family :blue
-  :brightness 0.457
-  :temperature 0.462
-  :saturation 0.338
-  :contrast 0.918
-  :mean-lightness 0.648
-  :hue-concentration 0.999
-  :tags #{"blue" "high-contrast" "light" "monochrome"}}
+  {:hex ["#3C424C" "#687482" "#9AA8B8" "#D2DCE6" "#FAFCFF"]
+   :rgba [[60 66 76 255] [104 116 130 255] [154 168 184 255] [210 220 230 255] [250 252 255 255]]
+   :count 5
+   :name :silver-morning
+   :category :monochrome
+   :family :blue
+   :brightness 0.457
+   :temperature 0.462
+   :saturation 0.382
+   :contrast 0.918
+   :mean-lightness 0.661
+   :hue-concentration 0.999
+   :tags #{"blue" "high-contrast" "light" "monochrome" "muted"}}
 
  ; Neutral
  :neutral/antique-paper
- {:hex ["#4E483A" "#928668" "#CEC29E" "#ECE4CE" "#FCF8EE"]
-  :rgba [[78 72 58 255] [146 134 104 255] [206 194 158 255] [236 228 206 255] [252 248 238 255]]
-  :count 5
-  :name :antique-paper
-  :category :neutral
-  :family :orange
-  :brightness 0.513
-  :temperature 0.56
-  :saturation 0.357
-  :contrast 0.874
-  :mean-lightness 0.66
-  :hue-concentration 1.0
-  :tags #{"light" "monochrome" "orange" "paper" "vintage"}}
+  {:hex ["#4E483A" "#928668" "#CEC29E" "#ECE4CE" "#FCF8EE"]
+   :rgba [[78 72 58 255] [146 134 104 255] [206 194 158 255] [236 228 206 255] [252 248 238 255]]
+   :count 5
+   :name :antique-paper
+   :category :neutral
+   :family :yellow
+   :brightness 0.513
+   :temperature 0.56
+   :saturation 0.369
+   :contrast 0.874
+   :mean-lightness 0.708
+   :hue-concentration 1.0
+   :tags #{"light" "monochrome" "muted" "orange" "paper" "vintage" "yellow"}}
  :neutral/coffee
- {:hex ["#1E120C" "#3E2418" "#6E4632" "#A87C5E" "#E0C8A8"]
-  :rgba [[30 18 12 255] [62 36 24 255] [110 70 50 255] [168 124 94 255] [224 200 168 255]]
-  :count 5
-  :name :coffee
-  :category :neutral
-  :family :orange
-  :brightness 0.189
-  :temperature 0.596
-  :saturation 0.404
-  :contrast 0.592
-  :mean-lightness 0.369
-  :hue-concentration 0.994
-  :tags #{"coffee" "dark" "earth-tone" "low-contrast" "monochrome" "orange" "warm"}}
+  {:hex ["#1E120C" "#3E2418" "#6E4632" "#A87C5E" "#E0C8A8"]
+   :rgba [[30 18 12 255] [62 36 24 255] [110 70 50 255] [168 124 94 255] [224 200 168 255]]
+   :count 5
+   :name :coffee
+   :category :neutral
+   :family :orange
+   :brightness 0.189
+   :temperature 0.596
+   :saturation 0.485
+   :contrast 0.592
+   :mean-lightness 0.39
+   :hue-concentration 0.988
+   :tags #{"coffee" "dark" "earth-tone" "low-contrast" "monochrome" "orange" "warm"}}
  :neutral/ink
- {:hex ["#0E0E10" "#26262A" "#3E3E44" "#5A5A62" "#828289" "#B4B4BC" "#ECECF0"]
-  :rgba [[14 14 16 255] [38 38 42 255] [62 62 68 255] [90 90 98 255] [130 130 137 255] [180 180 188 255] [236 236 240 255]]
-  :count 7
-  :name :ink
-  :category :neutral
-  :family :neutral
-  :brightness 0.243
-  :temperature 0.489
-  :saturation 0.058
-  :contrast 0.837
-  :mean-lightness 0.431
-  :hue-concentration 1.0
-  :tags #{"grayscale" "muted" "neutral" "ramp"}}
+  {:hex ["#0E0E10" "#26262A" "#3E3E44" "#5A5A62" "#828289" "#B4B4BC" "#ECECF0"]
+   :rgba [[14 14 16 255] [38 38 42 255] [62 62 68 255] [90 90 98 255] [130 130 137 255] [180 180 188 255] [236 236 240 255]]
+   :count 7
+   :name :ink
+   :category :neutral
+   :family :neutral
+   :brightness 0.243
+   :temperature 0.489
+   :saturation 0.072
+   :contrast 0.837
+   :mean-lightness 0.437
+   :hue-concentration 1.0
+   :tags #{"grayscale" "muted" "neutral" "ramp"}}
  :neutral/sepia
- {:hex ["#2A1C12" "#583A22" "#90623A" "#CEA274" "#F4E4C2"]
-  :rgba [[42 28 18 255] [88 58 34 255] [144 98 58 255] [206 162 116 255] [244 228 194 255]]
-  :count 5
-  :name :sepia
-  :category :neutral
-  :family :orange
-  :brightness 0.281
-  :temperature 0.619
-  :saturation 0.488
-  :contrast 0.772
-  :mean-lightness 0.449
-  :hue-concentration 0.994
-  :tags #{"earth-tone" "monochrome" "orange" "photo" "vintage"}}
+  {:hex ["#2A1C12" "#583A22" "#90623A" "#CEA274" "#F4E4C2"]
+   :rgba [[42 28 18 255] [88 58 34 255] [144 98 58 255] [206 162 116 255] [244 228 194 255]]
+   :count 5
+   :name :sepia
+   :category :neutral
+   :family :orange
+   :brightness 0.281
+   :temperature 0.619
+   :saturation 0.586
+   :contrast 0.772
+   :mean-lightness 0.491
+   :hue-concentration 0.985
+   :tags #{"earth-tone" "monochrome" "orange" "photo" "vintage"}}
  :neutral/stone
- {:hex ["#2A2826" "#4E4A44" "#78706A" "#A8A098" "#DAD4CC"]
-  :rgba [[42 40 38 255] [78 74 68 255] [120 112 106 255] [168 160 152 255] [218 212 204 255]]
-  :count 5
-  :name :stone
-  :category :neutral
-  :family :neutral
-  :brightness 0.256
-  :temperature 0.523
-  :saturation 0.085
-  :contrast 0.642
-  :mean-lightness 0.468
-  :hue-concentration 0.998
-  :tags #{"grayscale" "low-contrast" "muted" "neutral" "stone"}}
+  {:hex ["#2A2826" "#4E4A44" "#78706A" "#A8A098" "#DAD4CC"]
+   :rgba [[42 40 38 255] [78 74 68 255] [120 112 106 255] [168 160 152 255] [218 212 204 255]]
+   :count 5
+   :name :stone
+   :category :neutral
+   :family :neutral
+   :brightness 0.256
+   :temperature 0.523
+   :saturation 0.111
+   :contrast 0.642
+   :mean-lightness 0.494
+   :hue-concentration 0.996
+   :tags #{"grayscale" "low-contrast" "muted" "neutral" "stone"}}
 
  ; Ocean
  :ocean/abyss
- {:hex ["#05101F" "#0A2038" "#123A5C" "#1E6088" "#4C9CC0" "#A8DCEC"]
-  :rgba [[5 16 31 255] [10 32 56 255] [18 58 92 255] [30 96 136 255] [76 156 192 255] [168 220 236 255]]
-  :count 6
-  :name :abyss
-  :category :ocean
-  :family :blue
-  :brightness 0.185
-  :temperature 0.358
-  :saturation 0.642
-  :contrast 0.651
-  :mean-lightness 0.343
-  :hue-concentration 0.992
-  :tags #{"blue" "dark" "deep" "low-contrast" "monochrome" "vivid"}}
+  {:hex ["#05101F" "#0A2038" "#123A5C" "#1E6088" "#4C9CC0" "#A8DCEC"]
+   :rgba [[5 16 31 255] [10 32 56 255] [18 58 92 255] [30 96 136 255] [76 156 192 255] [168 220 236 255]]
+   :count 6
+   :name :abyss
+   :category :ocean
+   :family :blue
+   :brightness 0.185
+   :temperature 0.358
+   :saturation 0.781
+   :contrast 0.651
+   :mean-lightness 0.373
+   :hue-concentration 0.98
+   :tags #{"blue" "dark" "deep" "low-contrast" "monochrome" "vivid"}}
  :ocean/coastal
- {:hex ["#122636" "#225276" "#3E88B6" "#76C2E0" "#EAF8FC"]
-  :rgba [[18 38 54 255] [34 82 118 255] [62 136 182 255] [118 194 224 255] [234 248 252 255]]
-  :count 5
-  :name :coastal
-  :category :ocean
-  :family :blue
-  :brightness 0.342
-  :temperature 0.357
-  :saturation 0.585
-  :contrast 0.899
-  :mean-lightness 0.508
-  :hue-concentration 0.996
-  :tags #{"blue" "monochrome"}}
+  {:hex ["#122636" "#225276" "#3E88B6" "#76C2E0" "#EAF8FC"]
+   :rgba [[18 38 54 255] [34 82 118 255] [62 136 182 255] [118 194 224 255] [234 248 252 255]]
+   :count 5
+   :name :coastal
+   :category :ocean
+   :family :blue
+   :brightness 0.342
+   :temperature 0.357
+   :saturation 0.735
+   :contrast 0.899
+   :mean-lightness 0.546
+   :hue-concentration 0.979
+   :tags #{"blue" "monochrome"}}
  :ocean/coral-reef
- {:hex ["#36181C" "#7E363A" "#D6605A" "#F8A68A" "#FFECDC"]
-  :rgba [[54 24 28 255] [126 54 58 255] [214 96 90 255] [248 166 138 255] [255 236 220 255]]
-  :count 5
-  :name :coral-reef
-  :category :ocean
-  :family :red
-  :brightness 0.336
-  :temperature 0.642
-  :saturation 0.655
-  :contrast 0.849
-  :mean-lightness 0.558
-  :hue-concentration 0.975
-  :tags #{"monochrome" "red" "vivid"}}
+  {:hex ["#36181C" "#7E363A" "#D6605A" "#F8A68A" "#FFECDC"]
+   :rgba [[54 24 28 255] [126 54 58 255] [214 96 90 255] [248 166 138 255] [255 236 220 255]]
+   :count 5
+   :name :coral-reef
+   :category :ocean
+   :family :orange
+   :brightness 0.336
+   :temperature 0.642
+   :saturation 0.657
+   :contrast 0.849
+   :mean-lightness 0.542
+   :hue-concentration 0.957
+   :tags #{"earth-tone" "monochrome" "orange" "red" "vivid"}}
  :ocean/kelp-forest
- {:hex ["#08160E" "#123222" "#1E5A40" "#3E8E64" "#86C29A"]
-  :rgba [[8 22 14 255] [18 50 34 255] [30 90 64 255] [62 142 100 255] [134 194 154 255]]
-  :count 5
-  :name :kelp-forest
-  :category :ocean
-  :family :green
-  :brightness 0.157
-  :temperature 0.455
-  :saturation 0.432
-  :contrast 0.453
-  :mean-lightness 0.294
-  :hue-concentration 0.997
-  :tags #{"dark" "earth-tone" "green" "kelp" "low-contrast" "monochrome" "underwater"}}
+  {:hex ["#08160E" "#123222" "#1E5A40" "#3E8E64" "#86C29A"]
+   :rgba [[8 22 14 255] [18 50 34 255] [30 90 64 255] [62 142 100 255] [134 194 154 255]]
+   :count 5
+   :name :kelp-forest
+   :category :ocean
+   :family :green
+   :brightness 0.157
+   :temperature 0.455
+   :saturation 0.677
+   :contrast 0.453
+   :mean-lightness 0.369
+   :hue-concentration 0.999
+   :tags #{"dark" "earth-tone" "green" "kelp" "low-contrast" "monochrome" "underwater"}}
  :ocean/oasis
- {:hex ["#102222" "#18524E" "#2A8A80" "#58C6B6" "#D6F8EA"]
-  :rgba [[16 34 34 255] [24 82 78 255] [42 138 128 255] [88 198 182 255] [214 248 234 255]]
-  :count 5
-  :name :oasis
-  :category :ocean
-  :family :teal
-  :brightness 0.323
-  :temperature 0.393
-  :saturation 0.528
-  :contrast 0.86
-  :mean-lightness 0.425
-  :hue-concentration 0.988
-  :tags #{"monochrome" "teal" "water"}}
+  {:hex ["#102222" "#18524E" "#2A8A80" "#58C6B6" "#D6F8EA"]
+   :rgba [[16 34 34 255] [24 82 78 255] [42 138 128 255] [88 198 182 255] [214 248 234 255]]
+   :count 5
+   :name :oasis
+   :category :ocean
+   :family :teal
+   :brightness 0.323
+   :temperature 0.393
+   :saturation 0.735
+   :contrast 0.86
+   :mean-lightness 0.527
+   :hue-concentration 0.985
+   :tags #{"monochrome" "teal" "water"}}
  :ocean/ocean-deep
- {:hex ["#08142A" "#123054" "#245884" "#5296C6" "#D4ECF8"]
-  :rgba [[8 20 42 255] [18 48 84 255] [36 88 132 255] [82 150 198 255] [212 236 248 255]]
-  :count 5
-  :name :ocean-deep
-  :category :ocean
-  :family :blue
-  :brightness 0.242
-  :temperature 0.364
-  :saturation 0.625
-  :contrast 0.8
-  :mean-lightness 0.416
-  :hue-concentration 0.993
-  :tags #{"blue" "monochrome" "vivid"}}
+  {:hex ["#08142A" "#123054" "#245884" "#5296C6" "#D4ECF8"]
+   :rgba [[8 20 42 255] [18 48 84 255] [36 88 132 255] [82 150 198 255] [212 236 248 255]]
+   :count 5
+   :name :ocean-deep
+   :category :ocean
+   :family :blue
+   :brightness 0.242
+   :temperature 0.364
+   :saturation 0.77
+   :contrast 0.8
+   :mean-lightness 0.427
+   :hue-concentration 0.982
+   :tags #{"blue" "monochrome" "vivid"}}
  :ocean/storm-sea
- {:hex ["#121826" "#2A3A52" "#4A668A" "#84A6C6" "#DCE8F2"]
-  :rgba [[18 24 38 255] [42 58 82 255] [74 102 138 255] [132 166 198 255] [220 232 242 255]]
-  :count 5
-  :name :storm-sea
-  :category :ocean
-  :family :blue
-  :brightness 0.267
-  :temperature 0.417
-  :saturation 0.361
-  :contrast 0.784
-  :mean-lightness 0.464
-  :hue-concentration 0.996
-  :tags #{"blue" "monochrome" "storm" "water"}}
+  {:hex ["#121826" "#2A3A52" "#4A668A" "#84A6C6" "#DCE8F2"]
+   :rgba [[18 24 38 255] [42 58 82 255] [74 102 138 255] [132 166 198 255] [220 232 242 255]]
+   :count 5
+   :name :storm-sea
+   :category :ocean
+   :family :blue
+   :brightness 0.267
+   :temperature 0.417
+   :saturation 0.472
+   :contrast 0.784
+   :mean-lightness 0.466
+   :hue-concentration 0.991
+   :tags #{"blue" "monochrome" "storm" "water"}}
  :ocean/surf
- {:hex ["#0C2A30" "#16545E" "#2C8E94" "#74C8C2" "#E2F8F0"]
-  :rgba [[12 42 48 255] [22 84 94 255] [44 142 148 255] [116 200 194 255] [226 248 240 255]]
-  :count 5
-  :name :surf
-  :category :ocean
-  :family :teal
-  :brightness 0.34
-  :temperature 0.381
-  :saturation 0.561
-  :contrast 0.876
-  :mean-lightness 0.454
-  :hue-concentration 0.978
-  :tags #{"foam" "monochrome" "teal" "wave"}}
+  {:hex ["#0C2A30" "#16545E" "#2C8E94" "#74C8C2" "#E2F8F0"]
+   :rgba [[12 42 48 255] [22 84 94 255] [44 142 148 255] [116 200 194 255] [226 248 240 255]]
+   :count 5
+   :name :surf
+   :category :ocean
+   :family :teal
+   :brightness 0.34
+   :temperature 0.381
+   :saturation 0.733
+   :contrast 0.876
+   :mean-lightness 0.546
+   :hue-concentration 0.961
+   :tags #{"foam" "monochrome" "teal" "wave"}}
  :ocean/teal-bay
- {:hex ["#0E2226" "#184A54" "#2E7A88" "#60B8C2" "#DCF6F8"]
-  :rgba [[14 34 38 255] [24 74 84 255] [46 122 136 255] [96 184 194 255] [220 246 248 255]]
-  :count 5
-  :name :teal-bay
-  :category :ocean
-  :family :teal
-  :brightness 0.304
-  :temperature 0.382
-  :saturation 0.525
-  :contrast 0.865
-  :mean-lightness 0.431
-  :hue-concentration 0.999
-  :tags #{"monochrome" "teal"}}
+  {:hex ["#0E2226" "#184A54" "#2E7A88" "#60B8C2" "#DCF6F8"]
+   :rgba [[14 34 38 255] [24 74 84 255] [46 122 136 255] [96 184 194 255] [220 246 248 255]]
+   :count 5
+   :name :teal-bay
+   :category :ocean
+   :family :teal
+   :brightness 0.304
+   :temperature 0.382
+   :saturation 0.722
+   :contrast 0.865
+   :mean-lightness 0.506
+   :hue-concentration 0.996
+   :tags #{"monochrome" "teal"}}
  :ocean/tidepool
- {:hex ["#10262A" "#1E4E4A" "#3A7E68" "#7CAE7A" "#D8D8A8"]
-  :rgba [[16 38 42 255] [30 78 74 255] [58 126 104 255] [124 174 122 255] [216 216 168 255]]
-  :count 5
-  :name :tidepool
-  :category :ocean
-  :family :green
-  :brightness 0.254
-  :temperature 0.474
-  :saturation 0.377
-  :contrast 0.649
-  :mean-lightness 0.404
-  :hue-concentration 0.699
-  :tags #{"earth-tone" "green" "low-contrast" "tidepool"}}
+  {:hex ["#10262A" "#1E4E4A" "#3A7E68" "#7CAE7A" "#D8D8A8"]
+   :rgba [[16 38 42 255] [30 78 74 255] [58 126 104 255] [124 174 122 255] [216 216 168 255]]
+   :count 5
+   :name :tidepool
+   :category :ocean
+   :family :teal
+   :brightness 0.254
+   :temperature 0.474
+   :saturation 0.604
+   :contrast 0.649
+   :mean-lightness 0.487
+   :hue-concentration 0.79
+   :tags #{"earth-tone" "green" "low-contrast" "teal" "tidepool"}}
  :ocean/tropical-water
- {:hex ["#0C2A36" "#166274" "#2CA6A8" "#66DED2" "#E2FCF6"]
-  :rgba [[12 42 54 255] [22 98 116 255] [44 166 168 255] [102 222 210 255] [226 252 246 255]]
-  :count 5
-  :name :tropical-water
-  :category :ocean
-  :family :teal
-  :brightness 0.39
-  :temperature 0.348
-  :saturation 0.672
-  :contrast 0.904
-  :mean-lightness 0.478
-  :hue-concentration 0.98
-  :tags #{"high-contrast" "monochrome" "teal" "vivid"}}
+  {:hex ["#0C2A36" "#166274" "#2CA6A8" "#66DED2" "#E2FCF6"]
+   :rgba [[12 42 54 255] [22 98 116 255] [44 166 168 255] [102 222 210 255] [226 252 246 255]]
+   :count 5
+   :name :tropical-water
+   :category :ocean
+   :family :teal
+   :brightness 0.39
+   :temperature 0.348
+   :saturation 0.822
+   :contrast 0.904
+   :mean-lightness 0.589
+   :hue-concentration 0.935
+   :tags #{"high-contrast" "monochrome" "teal" "vivid"}}
 
  ; Pastel
  :pastel/buttercream
- {:hex ["#483A18" "#947A30" "#DCBE5C" "#F6E298" "#FFF8DE"]
-  :rgba [[72 58 24 255] [148 122 48 255] [220 190 92 255] [246 226 152 255] [255 248 222 255]]
-  :count 5
-  :name :buttercream
-  :category :pastel
-  :family :yellow
-  :brightness 0.495
-  :temperature 0.658
-  :saturation 0.699
-  :contrast 0.892
-  :mean-lightness 0.58
-  :hue-concentration 1.0
-  :tags #{"light" "monochrome" "vivid" "yellow"}}
+  {:hex ["#483A18" "#947A30" "#DCBE5C" "#F6E298" "#FFF8DE"]
+   :rgba [[72 58 24 255] [148 122 48 255] [220 190 92 255] [246 226 152 255] [255 248 222 255]]
+   :count 5
+   :name :buttercream
+   :category :pastel
+   :family :yellow
+   :brightness 0.495
+   :temperature 0.658
+   :saturation 0.802
+   :contrast 0.892
+   :mean-lightness 0.685
+   :hue-concentration 0.997
+   :tags #{"light" "monochrome" "vivid" "yellow"}}
  :pastel/cotton-candy
- {:hex ["#F8C8DC" "#F6D8E8" "#E6D6F2" "#D6E2F8" "#CFF0EC"]
-  :rgba [[248 200 220 255] [246 216 232 255] [230 214 242 255] [214 226 248 255] [207 240 236 255]]
-  :count 5
-  :name :cotton-candy
-  :category :pastel
-  :family :indigo
-  :brightness 0.739
-  :temperature 0.487
-  :saturation 0.63
-  :contrast 0.152
-  :mean-lightness 0.892
-  :hue-concentration 0.497
-  :tags #{"indigo" "light" "low-contrast" "pastel" "soft" "vivid"}}
+  {:hex ["#F8C8DC" "#F6D8E8" "#E6D6F2" "#D6E2F8" "#CFF0EC"]
+   :rgba [[248 200 220 255] [246 216 232 255] [230 214 242 255] [214 226 248 255] [207 240 236 255]]
+   :count 5
+   :name :cotton-candy
+   :category :pastel
+   :family :purple
+   :brightness 0.739
+   :temperature 0.487
+   :saturation 0.64
+   :contrast 0.152
+   :mean-lightness 0.888
+   :hue-concentration 0.668
+   :tags #{"indigo" "light" "low-contrast" "pastel" "purple" "soft" "vivid"}}
  :pastel/peachy
- {:hex ["#F4B89C" "#F8CCB2" "#FADCC6" "#FCE8D8" "#FFF4EC"]
-  :rgba [[244 184 156 255] [248 204 178 255] [250 220 198 255] [252 232 216 255] [255 244 236 255]]
-  :count 5
-  :name :peachy
-  :category :pastel
-  :family :orange
-  :brightness 0.746
-  :temperature 0.604
-  :saturation 0.866
-  :contrast 0.361
-  :mean-lightness 0.876
-  :hue-concentration 0.999
-  :tags #{"light" "low-contrast" "monochrome" "orange" "peach" "soft" "vivid"}}
+  {:hex ["#F4B89C" "#F8CCB2" "#FADCC6" "#FCE8D8" "#FFF4EC"]
+   :rgba [[244 184 156 255] [248 204 178 255] [250 220 198 255] [252 232 216 255] [255 244 236 255]]
+   :count 5
+   :name :peachy
+   :category :pastel
+   :family :orange
+   :brightness 0.746
+   :temperature 0.604
+   :saturation 0.846
+   :contrast 0.361
+   :mean-lightness 0.889
+   :hue-concentration 0.995
+   :tags #{"light" "low-contrast" "monochrome" "orange" "peach" "soft" "vivid"}}
  :pastel/smartees
- {:hex ["#F4A8C0" "#F8C8A2" "#F6E8A8" "#B8E0B0" "#A8C8F0"]
-  :rgba [[244 168 192 255] [248 200 162 255] [246 232 168 255] [184 224 176 255] [168 200 240 255]]
-  :count 5
-  :name :smartees
-  :category :pastel
-  :family :orange
-  :brightness 0.635
-  :temperature 0.56
-  :saturation 0.718
-  :contrast 0.291
-  :mean-lightness 0.802
-  :hue-concentration 0.419
-  :tags #{"candy" "light" "low-contrast" "orange" "soft" "vivid"}}
+  {:hex ["#F4A8C0" "#F8C8A2" "#F6E8A8" "#B8E0B0" "#A8C8F0"]
+   :rgba [[244 168 192 255] [248 200 162 255] [246 232 168 255] [184 224 176 255] [168 200 240 255]]
+   :count 5
+   :name :smartees
+   :category :pastel
+   :family :orange
+   :brightness 0.635
+   :temperature 0.56
+   :saturation 0.648
+   :contrast 0.291
+   :mean-lightness 0.834
+   :hue-concentration 0.374
+   :tags #{"candy" "light" "low-contrast" "orange" "pastel" "soft" "vivid"}}
 
  ; Rainbow
  :rainbow/cool-arc
- {:hex ["#46B04E" "#3E8AD6" "#7A3EB0"]
-  :rgba [[70 176 78 255] [62 138 214 255] [122 62 176 255]]
-  :count 3
-  :name :cool-arc
-  :category :rainbow
-  :family :blue
-  :brightness 0.226
-  :temperature 0.36
-  :saturation 0.52
-  :contrast 0.222
-  :mean-lightness 0.497
-  :hue-concentration 0.585
-  :tags #{"blue" "cool" "low-contrast"}}
+  {:hex ["#46B04E" "#3E8AD6" "#7A3EB0"]
+   :rgba [[70 176 78 255] [62 138 214 255] [122 62 176 255]]
+   :count 3
+   :name :cool-arc
+   :category :rainbow
+   :family :blue
+   :brightness 0.226
+   :temperature 0.36
+   :saturation 0.775
+   :contrast 0.222
+   :mean-lightness 0.531
+   :hue-concentration 0.465
+   :tags #{"blue" "cool" "low-contrast" "vivid"}}
  :rainbow/pastel-arc
- {:hex ["#F6A8A8" "#F8CCA2" "#F8ECA8" "#AEE0AE" "#A8CCF0" "#C8B0E8"]
-  :rgba [[246 168 168 255] [248 204 162 255] [248 236 168 255] [174 224 174 255] [168 204 240 255] [200 176 232 255]]
-  :count 6
-  :name :pastel-arc
-  :category :rainbow
-  :family :orange
-  :brightness 0.619
-  :temperature 0.546
-  :saturation 0.704
-  :contrast 0.336
-  :mean-lightness 0.802
-  :hue-concentration 0.319
-  :tags #{"light" "low-contrast" "orange" "soft" "vivid"}}
+  {:hex ["#F6A8A8" "#F8CCA2" "#F8ECA8" "#AEE0AE" "#A8CCF0" "#C8B0E8"]
+   :rgba [[246 168 168 255] [248 204 162 255] [248 236 168 255] [174 224 174 255] [168 204 240 255] [200 176 232 255]]
+   :count 6
+   :name :pastel-arc
+   :category :rainbow
+   :family :red
+   :brightness 0.619
+   :temperature 0.546
+   :saturation 0.657
+   :contrast 0.336
+   :mean-lightness 0.825
+   :hue-concentration 0.29
+   :tags #{"light" "low-contrast" "orange" "red" "soft" "vivid"}}
  :rainbow/pastel-quad
- {:hex ["#F6A8A8" "#F8E0A8" "#AEE0AE" "#A8CCF0"]
-  :rgba [[246 168 168 255] [248 224 168 255] [174 224 174 255] [168 204 240 255]]
-  :count 4
-  :name :pastel-quad
-  :category :rainbow
-  :family :orange
-  :brightness 0.624
-  :temperature 0.542
-  :saturation 0.704
-  :contrast 0.257
-  :mean-lightness 0.802
-  :hue-concentration 0.305
-  :tags #{"light" "low-contrast" "orange" "soft" "vivid"}}
+  {:hex ["#F6A8A8" "#F8E0A8" "#AEE0AE" "#A8CCF0"]
+   :rgba [[246 168 168 255] [248 224 168 255] [174 224 174 255] [168 204 240 255]]
+   :count 4
+   :name :pastel-quad
+   :category :rainbow
+   :family :orange
+   :brightness 0.624
+   :temperature 0.542
+   :saturation 0.647
+   :contrast 0.257
+   :mean-lightness 0.829
+   :hue-concentration 0.281
+   :tags #{"light" "low-contrast" "orange" "pastel" "soft" "vivid"}}
  :rainbow/quad
- {:hex ["#E0443A" "#F4C828" "#46B04E" "#3E78D6"]
-  :rgba [[224 68 58 255] [244 200 40 255] [70 176 78 255] [62 120 214 255]]
-  :count 4
-  :name :quad
-  :category :rainbow
-  :family :yellow
-  :brightness 0.333
-  :temperature 0.603
-  :saturation 0.678
-  :contrast 0.414
-  :mean-lightness 0.533
-  :hue-concentration 0.327
-  :tags #{"low-contrast" "vivid" "yellow"}}
+  {:hex ["#E0443A" "#F4C828" "#46B04E" "#3E78D6"]
+   :rgba [[224 68 58 255] [244 200 40 255] [70 176 78 255] [62 120 214 255]]
+   :count 4
+   :name :quad
+   :category :rainbow
+   :family :yellow
+   :brightness 0.333
+   :temperature 0.603
+   :saturation 0.834
+   :contrast 0.414
+   :mean-lightness 0.624
+   :hue-concentration 0.294
+   :tags #{"low-contrast" "vivid" "yellow"}}
  :rainbow/spectrum
- {:hex ["#E03A3A" "#EE7E2E" "#F4C828" "#4EAE4E" "#3C8ADE" "#3A4EB0" "#7E3EA8"]
-  :rgba [[224 58 58 255] [238 126 46 255] [244 200 40 255] [78 174 78 255] [60 138 222 255] [58 78 176 255] [126 62 168 255]]
-  :count 7
-  :name :spectrum
-  :category :rainbow
-  :family :red
-  :brightness 0.272
-  :temperature 0.567
-  :saturation 0.648
-  :contrast 0.512
-  :mean-lightness 0.518
-  :hue-concentration 0.231
-  :tags #{"low-contrast" "red" "spectrum" "vivid"}}
+  {:hex ["#E03A3A" "#EE7E2E" "#F4C828" "#4EAE4E" "#3C8ADE" "#3A4EB0" "#7E3EA8"]
+   :rgba [[224 58 58 255] [238 126 46 255] [244 200 40 255] [78 174 78 255] [60 138 222 255] [58 78 176 255] [126 62 168 255]]
+   :count 7
+   :name :spectrum
+   :category :rainbow
+   :family :red
+   :brightness 0.272
+   :temperature 0.567
+   :saturation 0.801
+   :contrast 0.512
+   :mean-lightness 0.562
+   :hue-concentration 0.228
+   :tags #{"low-contrast" "red" "spectrum" "vivid"}}
  :rainbow/traditional
- {:hex ["#E84030" "#F08A2E" "#F4D03E" "#46B04E" "#3E78D6" "#7A3EB0"]
-  :rgba [[232 64 48 255] [240 138 46 255] [244 208 62 255] [70 176 78 255] [62 120 214 255] [122 62 176 255]]
-  :count 6
-  :name :traditional
-  :category :rainbow
-  :family :orange
-  :brightness 0.309
-  :temperature 0.613
-  :saturation 0.686
-  :contrast 0.54
-  :mean-lightness 0.533
-  :hue-concentration 0.374
-  :tags #{"low-contrast" "orange" "spectrum" "vivid"}}
+  {:hex ["#E84030" "#F08A2E" "#F4D03E" "#46B04E" "#3E78D6" "#7A3EB0"]
+   :rgba [[232 64 48 255] [240 138 46 255] [244 208 62 255] [70 176 78 255] [62 120 214 255] [122 62 176 255]]
+   :count 6
+   :name :traditional
+   :category :rainbow
+   :family :orange
+   :brightness 0.309
+   :temperature 0.613
+   :saturation 0.829
+   :contrast 0.54
+   :mean-lightness 0.598
+   :hue-concentration 0.305
+   :tags #{"low-contrast" "orange" "spectrum" "vivid"}}
  :rainbow/triad
- {:hex ["#E84A4A" "#46B04E" "#3E78D6"]
-  :rgba [[232 74 74 255] [70 176 78 255] [62 120 214 255]]
-  :count 3
-  :name :triad
-  :category :rainbow
-  :family :indigo
-  :brightness 0.249
-  :temperature 0.499
-  :saturation 0.618
-  :contrast 0.136
-  :mean-lightness 0.541
-  :hue-concentration 0.021
-  :tags #{"indigo" "low-contrast" "triad" "vivid"}}
+  {:hex ["#E84A4A" "#46B04E" "#3E78D6"]
+   :rgba [[232 74 74 255] [70 176 78 255] [62 120 214 255]]
+   :count 3
+   :name :triad
+   :category :rainbow
+   :family :purple
+   :brightness 0.249
+   :temperature 0.499
+   :saturation 0.779
+   :contrast 0.136
+   :mean-lightness 0.566
+   :hue-concentration 0.012
+   :tags #{"indigo" "low-contrast" "purple" "triad" "vivid"}}
  :rainbow/warm-arc
- {:hex ["#E03A3A" "#F08A2E" "#F4D63E"]
-  :rgba [[224 58 58 255] [240 138 46 255] [244 214 62 255]]
-  :count 3
-  :name :warm-arc
-  :category :rainbow
-  :family :orange
-  :brightness 0.413
-  :temperature 0.854
-  :saturation 0.829
-  :contrast 0.485
-  :mean-lightness 0.571
-  :hue-concentration 0.939
-  :tags #{"low-contrast" "monochrome" "orange" "vivid" "warm"}}
+  {:hex ["#E03A3A" "#F08A2E" "#F4D63E"]
+   :rgba [[224 58 58 255] [240 138 46 255] [244 214 62 255]]
+   :count 3
+   :name :warm-arc
+   :category :rainbow
+   :family :orange
+   :brightness 0.413
+   :temperature 0.854
+   :saturation 0.864
+   :contrast 0.485
+   :mean-lightness 0.68
+   :hue-concentration 0.911
+   :tags #{"low-contrast" "monochrome" "orange" "vivid" "warm"}}
 
  ; Space
  :space/cosmic
- {:hex ["#0A0818" "#1E1840" "#3A2E70" "#6A5AA8" "#B0A4E0"]
-  :rgba [[10 8 24 255] [30 24 64 255] [58 46 112 255] [106 90 168 255] [176 164 224 255]]
-  :count 5
-  :name :cosmic
-  :category :space
-  :family :blue
-  :brightness 0.12
-  :temperature 0.417
-  :saturation 0.435
-  :contrast 0.409
-  :mean-lightness 0.362
-  :hue-concentration 0.999
-  :tags #{"blue" "dark" "low-contrast" "monochrome" "space"}}
+  {:hex ["#0A0818" "#1E1840" "#3A2E70" "#6A5AA8" "#B0A4E0"]
+   :rgba [[10 8 24 255] [30 24 64 255] [58 46 112 255] [106 90 168 255] [176 164 224 255]]
+   :count 5
+   :name :cosmic
+   :category :space
+   :family :indigo
+   :brightness 0.12
+   :temperature 0.417
+   :saturation 0.504
+   :contrast 0.409
+   :mean-lightness 0.302
+   :hue-concentration 1.0
+   :tags #{"blue" "dark" "indigo" "low-contrast" "monochrome" "space"}}
  :space/crystal-cavern
- {:hex ["#101622" "#263E62" "#4870AC" "#88C6EE" "#F0FCFF"]
-  :rgba [[16 22 34 255] [38 62 98 255] [72 112 172 255] [136 198 238 255] [240 252 255 255]]
-  :count 5
-  :name :crystal-cavern
-  :category :space
-  :family :blue
-  :brightness 0.337
-  :temperature 0.384
-  :saturation 0.592
-  :contrast 0.946
-  :mean-lightness 0.509
-  :hue-concentration 0.982
-  :tags #{"blue" "cave" "high-contrast" "ice" "monochrome"}}
+  {:hex ["#101622" "#263E62" "#4870AC" "#88C6EE" "#F0FCFF"]
+   :rgba [[16 22 34 255] [38 62 98 255] [72 112 172 255] [136 198 238 255] [240 252 255 255]]
+   :count 5
+   :name :crystal-cavern
+   :category :space
+   :family :blue
+   :brightness 0.337
+   :temperature 0.384
+   :saturation 0.7
+   :contrast 0.946
+   :mean-lightness 0.511
+   :hue-concentration 0.95
+   :tags #{"blue" "cave" "high-contrast" "ice" "monochrome"}}
  :space/deep-night
- {:hex ["#0C0E1C" "#1C2234" "#3A4862" "#7084A8" "#D2DCF5"]
-  :rgba [[12 14 28 255] [28 34 52 255] [58 72 98 255] [112 132 168 255] [210 220 245 255]]
-  :count 5
-  :name :deep-night
-  :category :space
-  :family :blue
-  :brightness 0.206
-  :temperature 0.433
-  :saturation 0.367
-  :contrast 0.71
-  :mean-lightness 0.396
-  :hue-concentration 0.996
-  :tags #{"blue" "dark" "monochrome"}}
+  {:hex ["#0C0E1C" "#1C2234" "#3A4862" "#7084A8" "#D2DCF5"]
+   :rgba [[12 14 28 255] [28 34 52 255] [58 72 98 255] [112 132 168 255] [210 220 245 255]]
+   :count 5
+   :name :deep-night
+   :category :space
+   :family :blue
+   :brightness 0.206
+   :temperature 0.433
+   :saturation 0.448
+   :contrast 0.71
+   :mean-lightness 0.382
+   :hue-concentration 0.998
+   :tags #{"blue" "dark" "monochrome"}}
  :space/galaxy
- {:hex ["#080A18" "#1A1C3A" "#3E2E5E" "#8A4E8A" "#E0B0D0"]
-  :rgba [[8 10 24 255] [26 28 58 255] [62 46 94 255] [138 78 138 255] [224 176 208 255]]
-  :count 5
-  :name :galaxy
-  :category :space
-  :family :indigo
-  :brightness 0.139
-  :temperature 0.475
-  :saturation 0.388
-  :contrast 0.511
-  :mean-lightness 0.342
-  :hue-concentration 0.813
-  :tags #{"dark" "indigo" "low-contrast" "space" "stars"}}
+  {:hex ["#080A18" "#1A1C3A" "#3E2E5E" "#8A4E8A" "#E0B0D0"]
+   :rgba [[8 10 24 255] [26 28 58 255] [62 46 94 255] [138 78 138 255] [224 176 208 255]]
+   :count 5
+   :name :galaxy
+   :category :space
+   :family :purple
+   :brightness 0.139
+   :temperature 0.475
+   :saturation 0.456
+   :contrast 0.511
+   :mean-lightness 0.314
+   :hue-concentration 0.905
+   :tags #{"dark" "indigo" "low-contrast" "monochrome" "purple" "space" "stars"}}
  :space/midnight-city
- {:hex ["#0A0C14" "#161C30" "#2E3A5C" "#607AB4" "#E4ECFF"]
-  :rgba [[10 12 20 255] [22 28 48 255] [46 58 92 255] [96 122 180 255] [228 236 255 255]]
-  :count 5
-  :name :midnight-city
-  :category :space
-  :family :blue
-  :brightness 0.219
-  :temperature 0.424
-  :saturation 0.479
-  :contrast 0.833
-  :mean-lightness 0.391
-  :hue-concentration 0.999
-  :tags #{"blue" "city" "monochrome" "night"}}
+  {:hex ["#0A0C14" "#161C30" "#2E3A5C" "#607AB4" "#E4ECFF"]
+   :rgba [[10 12 20 255] [22 28 48 255] [46 58 92 255] [96 122 180 255] [228 236 255 255]]
+   :count 5
+   :name :midnight-city
+   :category :space
+   :family :blue
+   :brightness 0.219
+   :temperature 0.424
+   :saturation 0.547
+   :contrast 0.833
+   :mean-lightness 0.368
+   :hue-concentration 0.999
+   :tags #{"blue" "city" "monochrome" "night"}}
  :space/nebula
- {:hex ["#0E0A1E" "#33246E" "#6E3E9E" "#C85490" "#F2A0A0"]
-  :rgba [[14 10 30 255] [51 36 110 255] [110 62 158 255] [200 84 144 255] [242 160 160 255]]
-  :count 5
-  :name :nebula
-  :category :space
-  :family :purple
-  :brightness 0.16
-  :temperature 0.506
-  :saturation 0.543
-  :contrast 0.462
-  :mean-lightness 0.428
-  :hue-concentration 0.693
-  :tags #{"dark" "low-contrast" "nebula" "purple" "space"}}
+  {:hex ["#0E0A1E" "#33246E" "#6E3E9E" "#C85490" "#F2A0A0"]
+   :rgba [[14 10 30 255] [51 36 110 255] [110 62 158 255] [200 84 144 255] [242 160 160 255]]
+   :count 5
+   :name :nebula
+   :category :space
+   :family :purple
+   :brightness 0.16
+   :temperature 0.506
+   :saturation 0.622
+   :contrast 0.462
+   :mean-lightness 0.374
+   :hue-concentration 0.734
+   :tags #{"dark" "low-contrast" "nebula" "purple" "space"}}
 
  ; Spring
  :spring/cherry-sky
- {:hex ["#3E4E72" "#7090C4" "#B8CCE8" "#ECA6C2" "#F8D8E4"]
-  :rgba [[62 78 114 255] [112 144 196 255] [184 204 232 255] [236 166 194 255] [248 216 228 255]]
-  :count 5
-  :name :cherry-sky
-  :category :spring
-  :family :indigo
-  :brightness 0.436
-  :temperature 0.452
-  :saturation 0.513
-  :contrast 0.67
-  :mean-lightness 0.693
-  :hue-concentration 0.505
-  :tags #{"indigo" "light" "low-contrast" "pink" "sky"}}
+  {:hex ["#3E4E72" "#7090C4" "#B8CCE8" "#ECA6C2" "#F8D8E4"]
+   :rgba [[62 78 114 255] [112 144 196 255] [184 204 232 255] [236 166 194 255] [248 216 228 255]]
+   :count 5
+   :name :cherry-sky
+   :category :spring
+   :family :purple
+   :brightness 0.436
+   :temperature 0.452
+   :saturation 0.591
+   :contrast 0.67
+   :mean-lightness 0.677
+   :hue-concentration 0.675
+   :tags #{"indigo" "light" "low-contrast" "pink" "purple" "sky"}}
  :spring/fresh-cut
- {:hex ["#162812" "#325A22" "#58943A" "#90CC62" "#E4F6BE"]
-  :rgba [[22 40 18 255] [50 90 34 255] [88 148 58 255] [144 204 98 255] [228 246 190 255]]
-  :count 5
-  :name :fresh-cut
-  :category :spring
-  :family :green
-  :brightness 0.339
-  :temperature 0.553
-  :saturation 0.507
-  :contrast 0.844
-  :mean-lightness 0.442
-  :hue-concentration 0.982
-  :tags #{"earth-tone" "green" "monochrome"}}
+  {:hex ["#162812" "#325A22" "#58943A" "#90CC62" "#E4F6BE"]
+   :rgba [[22 40 18 255] [50 90 34 255] [88 148 58 255] [144 204 98 255] [228 246 190 255]]
+   :count 5
+   :name :fresh-cut
+   :category :spring
+   :family :green
+   :brightness 0.339
+   :temperature 0.553
+   :saturation 0.658
+   :contrast 0.844
+   :mean-lightness 0.549
+   :hue-concentration 0.994
+   :tags #{"earth-tone" "green" "monochrome"}}
  :spring/lime-grove
- {:hex ["#1E2C10" "#466218" "#7CA826" "#B6E052" "#F2FCC2"]
-  :rgba [[30 44 16 255] [70 98 24 255] [124 168 38 255] [182 224 82 255] [242 252 194 255]]
-  :count 5
-  :name :lime-grove
-  :category :spring
-  :family :green
-  :brightness 0.402
-  :temperature 0.615
-  :saturation 0.661
-  :contrast 0.903
-  :mean-lightness 0.447
-  :hue-concentration 0.994
-  :tags #{"green" "high-contrast" "monochrome" "neon" "vivid"}}
+  {:hex ["#1E2C10" "#466218" "#7CA826" "#B6E052" "#F2FCC2"]
+   :rgba [[30 44 16 255] [70 98 24 255] [124 168 38 255] [182 224 82 255] [242 252 194 255]]
+   :count 5
+   :name :lime-grove
+   :category :spring
+   :family :green
+   :brightness 0.402
+   :temperature 0.615
+   :saturation 0.804
+   :contrast 0.903
+   :mean-lightness 0.597
+   :hue-concentration 0.995
+   :tags #{"green" "high-contrast" "monochrome" "neon" "vivid"}}
  :spring/orchard-bloom
- {:hex ["#5A3A2E" "#C06E84" "#F0A8C0" "#9AC86E" "#D8E8A0"]
-  :rgba [[90 58 46 255] [192 110 132 255] [240 168 192 255] [154 200 110 255] [216 232 160 255]]
-  :count 5
-  :name :orchard-bloom
-  :category :spring
-  :family :orange
-  :brightness 0.408
-  :temperature 0.599
-  :saturation 0.497
-  :contrast 0.695
-  :mean-lightness 0.607
-  :hue-concentration 0.688
-  :tags #{"blossom" "green" "orange" "pink"}}
+  {:hex ["#5A3A2E" "#C06E84" "#F0A8C0" "#9AC86E" "#D8E8A0"]
+   :rgba [[90 58 46 255] [192 110 132 255] [240 168 192 255] [154 200 110 255] [216 232 160 255]]
+   :count 5
+   :name :orchard-bloom
+   :category :spring
+   :family :orange
+   :brightness 0.408
+   :temperature 0.599
+   :saturation 0.544
+   :contrast 0.695
+   :mean-lightness 0.65
+   :hue-concentration 0.615
+   :tags #{"blossom" "green" "orange" "pink"}}
  :spring/peony
- {:hex ["#3A1622" "#742E44" "#C0567E" "#EE94B4" "#FBD4E0"]
-  :rgba [[58 22 34 255] [116 46 68 255] [192 86 126 255] [238 148 180 255] [251 212 224 255]]
-  :count 5
-  :name :peony
-  :category :spring
-  :family :pink
-  :brightness 0.285
-  :temperature 0.587
-  :saturation 0.579
-  :contrast 0.714
-  :mean-lightness 0.537
-  :hue-concentration 1.0
-  :tags #{"flower" "monochrome" "pink"}}
+  {:hex ["#3A1622" "#742E44" "#C0567E" "#EE94B4" "#FBD4E0"]
+   :rgba [[58 22 34 255] [116 46 68 255] [192 86 126 255] [238 148 180 255] [251 212 224 255]]
+   :count 5
+   :name :peony
+   :category :spring
+   :family :pink
+   :brightness 0.285
+   :temperature 0.587
+   :saturation 0.645
+   :contrast 0.714
+   :mean-lightness 0.507
+   :hue-concentration 0.999
+   :tags #{"flower" "monochrome" "pink"}}
  :spring/post-rain-blush
- {:hex ["#4A3A40" "#86686E" "#C098A2" "#E2C2C8" "#F6E6E8"]
-  :rgba [[74 58 64 255] [134 104 110 255] [192 152 162 255] [226 194 200 255] [246 230 232 255]]
-  :count 5
-  :name :post-rain-blush
-  :category :spring
-  :family :red
-  :brightness 0.396
-  :temperature 0.541
-  :saturation 0.263
-  :contrast 0.772
-  :mean-lightness 0.631
-  :hue-concentration 0.997
-  :tags #{"monochrome" "muted" "pink" "red" "soft"}}
+  {:hex ["#4A3A40" "#86686E" "#C098A2" "#E2C2C8" "#F6E6E8"]
+   :rgba [[74 58 64 255] [134 104 110 255] [192 152 162 255] [226 194 200 255] [246 230 232 255]]
+   :count 5
+   :name :post-rain-blush
+   :category :spring
+   :family :red
+   :brightness 0.396
+   :temperature 0.541
+   :saturation 0.305
+   :contrast 0.772
+   :mean-lightness 0.628
+   :hue-concentration 0.996
+   :tags #{"monochrome" "muted" "pink" "red" "soft"}}
  :spring/spring-field
- {:hex ["#182C14" "#3A602A" "#689A48" "#A6D67A" "#ECFACE"]
-  :rgba [[24 44 20 255] [58 96 42 255] [104 154 72 255] [166 214 122 255] [236 250 206 255]]
-  :count 5
-  :name :spring-field
-  :category :spring
-  :family :green
-  :brightness 0.373
-  :temperature 0.549
-  :saturation 0.495
-  :contrast 0.886
-  :mean-lightness 0.478
-  :hue-concentration 0.981
-  :tags #{"earth-tone" "green" "monochrome"}}
+  {:hex ["#182C14" "#3A602A" "#689A48" "#A6D67A" "#ECFACE"]
+   :rgba [[24 44 20 255] [58 96 42 255] [104 154 72 255] [166 214 122 255] [236 250 206 255]]
+   :count 5
+   :name :spring-field
+   :category :spring
+   :family :green
+   :brightness 0.373
+   :temperature 0.549
+   :saturation 0.637
+   :contrast 0.886
+   :mean-lightness 0.576
+   :hue-concentration 0.992
+   :tags #{"earth-tone" "green" "monochrome"}}
  :spring/tulip
- {:hex ["#2A1018" "#6E1E36" "#B83A5E" "#E87090" "#F8C4D2"]
-  :rgba [[42 16 24 255] [110 30 54 255] [184 58 94 255] [232 112 144 255] [248 196 210 255]]
-  :count 5
-  :name :tulip
-  :category :spring
-  :family :pink
-  :brightness 0.229
-  :temperature 0.614
-  :saturation 0.61
-  :contrast 0.632
-  :mean-lightness 0.482
-  :hue-concentration 1.0
-  :tags #{"flower" "low-contrast" "monochrome" "pink" "vivid"}}
+  {:hex ["#2A1018" "#6E1E36" "#B83A5E" "#E87090" "#F8C4D2"]
+   :rgba [[42 16 24 255] [110 30 54 255] [184 58 94 255] [232 112 144 255] [248 196 210 255]]
+   :count 5
+   :name :tulip
+   :category :spring
+   :family :red
+   :brightness 0.229
+   :temperature 0.614
+   :saturation 0.684
+   :contrast 0.632
+   :mean-lightness 0.449
+   :hue-concentration 0.999
+   :tags #{"flower" "low-contrast" "monochrome" "pink" "red" "vivid"}}
  :spring/wildflower
- {:hex ["#8A3E6E" "#D87EA0" "#F0C86A" "#9AC87E" "#C8DCEC"]
-  :rgba [[138 62 110 255] [216 126 160 255] [240 200 106 255] [154 200 126 255] [200 220 236 255]]
-  :count 5
-  :name :wildflower
-  :category :spring
-  :family :orange
-  :brightness 0.444
-  :temperature 0.582
-  :saturation 0.524
-  :contrast 0.595
-  :mean-lightness 0.647
-  :hue-concentration 0.366
-  :tags #{"light" "low-contrast" "meadow" "mixed" "orange" "pink"}}
+  {:hex ["#8A3E6E" "#D87EA0" "#F0C86A" "#9AC87E" "#C8DCEC"]
+   :rgba [[138 62 110 255] [216 126 160 255] [240 200 106 255] [154 200 126 255] [200 220 236 255]]
+   :count 5
+   :name :wildflower
+   :category :spring
+   :family :orange
+   :brightness 0.444
+   :temperature 0.582
+   :saturation 0.575
+   :contrast 0.595
+   :mean-lightness 0.692
+   :hue-concentration 0.322
+   :tags #{"light" "low-contrast" "meadow" "mixed" "orange" "pink"}}
 
  ; Sunset
  :sunset/apricot
- {:hex ["#3E2214" "#84482A" "#D6844E" "#F8C28E" "#FFF0D6"]
-  :rgba [[62 34 20 255] [132 72 42 255] [214 132 78 255] [248 194 142 255] [255 240 214 255]]
-  :count 5
-  :name :apricot
-  :category :sunset
-  :family :orange
-  :brightness 0.384
-  :temperature 0.663
-  :saturation 0.707
-  :contrast 0.862
-  :mean-lightness 0.552
-  :hue-concentration 0.992
-  :tags #{"monochrome" "orange" "vivid"}}
+  {:hex ["#3E2214" "#84482A" "#D6844E" "#F8C28E" "#FFF0D6"]
+   :rgba [[62 34 20 255] [132 72 42 255] [214 132 78 255] [248 194 142 255] [255 240 214 255]]
+   :count 5
+   :name :apricot
+   :category :sunset
+   :family :orange
+   :brightness 0.384
+   :temperature 0.663
+   :saturation 0.79
+   :contrast 0.862
+   :mean-lightness 0.588
+   :hue-concentration 0.971
+   :tags #{"monochrome" "orange" "vivid"}}
  :sunset/dusk-ember
- {:hex ["#2A1030" "#6C1C4A" "#B8324A" "#F0723A" "#FFC878"]
-  :rgba [[42 16 48 255] [108 28 74 255] [184 50 74 255] [240 114 58 255] [255 200 120 255]]
-  :count 5
-  :name :dusk-ember
-  :category :sunset
-  :family :red
-  :brightness 0.227
-  :temperature 0.678
-  :saturation 0.704
-  :contrast 0.628
-  :mean-lightness 0.434
-  :hue-concentration 0.806
-  :tags #{"low-contrast" "red" "sky" "vivid" "warm"}}
+  {:hex ["#2A1030" "#6C1C4A" "#B8324A" "#F0723A" "#FFC878"]
+   :rgba [[42 16 48 255] [108 28 74 255] [184 50 74 255] [240 114 58 255] [255 200 120 255]]
+   :count 5
+   :name :dusk-ember
+   :category :sunset
+   :family :red
+   :brightness 0.227
+   :temperature 0.678
+   :saturation 0.797
+   :contrast 0.628
+   :mean-lightness 0.448
+   :hue-concentration 0.788
+   :tags #{"low-contrast" "red" "sky" "vivid" "warm"}}
  :sunset/golden-hour
- {:hex ["#28180C" "#5E3416" "#AA6626" "#EAAE4A" "#FFEAAC"]
-  :rgba [[40 24 12 255] [94 52 22 255] [170 102 38 255] [234 174 74 255] [255 234 172 255]]
-  :count 5
-  :name :golden-hour
-  :category :sunset
-  :family :orange
-  :brightness 0.311
-  :temperature 0.686
-  :saturation 0.717
-  :contrast 0.82
-  :mean-lightness 0.436
-  :hue-concentration 0.99
-  :tags #{"monochrome" "orange" "sky" "vivid" "warm"}}
+  {:hex ["#28180C" "#5E3416" "#AA6626" "#EAAE4A" "#FFEAAC"]
+   :rgba [[40 24 12 255] [94 52 22 255] [170 102 38 255] [234 174 74 255] [255 234 172 255]]
+   :count 5
+   :name :golden-hour
+   :category :sunset
+   :family :orange
+   :brightness 0.311
+   :temperature 0.686
+   :saturation 0.835
+   :contrast 0.82
+   :mean-lightness 0.508
+   :hue-concentration 0.97
+   :tags #{"monochrome" "orange" "sky" "vivid" "warm"}}
  :sunset/peach-sunrise
- {:hex ["#42221A" "#884434" "#D6765C" "#F8B89A" "#FFEEDC"]
-  :rgba [[66 34 26 255] [136 68 52 255] [214 118 92 255] [248 184 154 255] [255 238 220 255]]
-  :count 5
-  :name :peach-sunrise
-  :category :sunset
-  :family :orange
-  :brightness 0.368
-  :temperature 0.647
-  :saturation 0.67
-  :contrast 0.852
-  :mean-lightness 0.574
-  :hue-concentration 0.99
-  :tags #{"monochrome" "orange" "vivid"}}
+  {:hex ["#42221A" "#884434" "#D6765C" "#F8B89A" "#FFEEDC"]
+   :rgba [[66 34 26 255] [136 68 52 255] [214 118 92 255] [248 184 154 255] [255 238 220 255]]
+   :count 5
+   :name :peach-sunrise
+   :category :sunset
+   :family :orange
+   :brightness 0.368
+   :temperature 0.647
+   :saturation 0.716
+   :contrast 0.852
+   :mean-lightness 0.579
+   :hue-concentration 0.972
+   :tags #{"monochrome" "orange" "vivid"}}
  :sunset/sunset-ridge
- {:hex ["#301016" "#6C1C26" "#B63A34" "#F27E4C" "#FFD6A6"]
-  :rgba [[48 16 22 255] [108 28 38 255] [182 58 52 255] [242 126 76 255] [255 214 166 255]]
-  :count 5
-  :name :sunset-ridge
-  :category :sunset
-  :family :red
-  :brightness 0.25
-  :temperature 0.689
-  :saturation 0.702
-  :contrast 0.71
-  :mean-lightness 0.46
-  :hue-concentration 0.958
-  :tags #{"monochrome" "red" "vivid"}}
+  {:hex ["#301016" "#6C1C26" "#B63A34" "#F27E4C" "#FFD6A6"]
+   :rgba [[48 16 22 255] [108 28 38 255] [182 58 52 255] [242 126 76 255] [255 214 166 255]]
+   :count 5
+   :name :sunset-ridge
+   :category :sunset
+   :family :orange
+   :brightness 0.25
+   :temperature 0.689
+   :saturation 0.748
+   :contrast 0.71
+   :mean-lightness 0.46
+   :hue-concentration 0.947
+   :tags #{"monochrome" "orange" "red" "vivid"}}
 
  ; Synthwave
  :synthwave/neon-night
- {:hex ["#120A1E" "#38164E" "#7A26B6" "#3EDCD6" "#F2F8FF"]
-  :rgba [[18 10 30 255] [56 22 78 255] [122 38 182 255] [62 220 214 255] [242 248 255 255]]
-  :count 5
-  :name :neon-night
-  :category :synthwave
-  :family :blue
-  :brightness 0.323
-  :temperature 0.398
-  :saturation 0.682
-  :contrast 0.928
-  :mean-lightness 0.447
-  :hue-concentration 0.78
-  :tags #{"80s" "blue" "cyberpunk" "high-contrast" "neon" "retro" "vivid"}}
+  {:hex ["#120A1E" "#38164E" "#7A26B6" "#3EDCD6" "#F2F8FF"]
+   :rgba [[18 10 30 255] [56 22 78 255] [122 38 182 255] [62 220 214 255] [242 248 255 255]]
+   :count 5
+   :name :neon-night
+   :category :synthwave
+   :family :blue
+   :brightness 0.323
+   :temperature 0.398
+   :saturation 0.795
+   :contrast 0.928
+   :mean-lightness 0.465
+   :hue-concentration 0.788
+   :tags #{"80s" "blue" "cyberpunk" "high-contrast" "neon" "retro" "vivid"}}
  :synthwave/outrun
- {:hex ["#160A28" "#5E1A7E" "#D62E86" "#FF8E3C"]
-  :rgba [[22 10 40 255] [94 26 126 255] [214 46 134 255] [255 142 60 255]]
-  :count 4
-  :name :outrun
-  :category :synthwave
-  :family :purple
-  :brightness 0.16
-  :temperature 0.61
-  :saturation 0.732
-  :contrast 0.404
-  :mean-lightness 0.381
-  :hue-concentration 0.659
-  :tags #{"80s" "dark" "low-contrast" "purple" "retro" "vivid"}}
+  {:hex ["#160A28" "#5E1A7E" "#D62E86" "#FF8E3C"]
+   :rgba [[22 10 40 255] [94 26 126 255] [214 46 134 255] [255 142 60 255]]
+   :count 4
+   :name :outrun
+   :category :synthwave
+   :family :pink
+   :brightness 0.16
+   :temperature 0.61
+   :saturation 0.833
+   :contrast 0.404
+   :mean-lightness 0.375
+   :hue-concentration 0.693
+   :tags #{"80s" "dark" "low-contrast" "pink" "purple" "retro" "vivid"}}
  :synthwave/synthwave
- {:hex ["#180A24" "#58185C" "#D63078" "#FF8E52" "#FFF4D6"]
-  :rgba [[24 10 36 255] [88 24 92 255] [214 48 120 255] [255 142 82 255] [255 244 214 255]]
-  :count 5
-  :name :synthwave
-  :category :synthwave
-  :family :red
-  :brightness 0.308
-  :temperature 0.615
-  :saturation 0.764
-  :contrast 0.903
-  :mean-lightness 0.482
-  :hue-concentration 0.671
-  :tags #{"80s" "high-contrast" "neon" "red" "retro" "vivid"}}
+  {:hex ["#180A24" "#58185C" "#D63078" "#FF8E52" "#FFF4D6"]
+   :rgba [[24 10 36 255] [88 24 92 255] [214 48 120 255] [255 142 82 255] [255 244 214 255]]
+   :count 5
+   :name :synthwave
+   :category :synthwave
+   :family :red
+   :brightness 0.308
+   :temperature 0.615
+   :saturation 0.846
+   :contrast 0.903
+   :mean-lightness 0.485
+   :hue-concentration 0.622
+   :tags #{"80s" "high-contrast" "neon" "red" "retro" "vivid"}}
 
  ; Volcanic
  :volcanic/ember
- {:hex ["#1C100C" "#542212" "#923A16" "#E07026" "#FFE0A2"]
-  :rgba [[28 16 12 255] [84 34 18 255] [146 58 22 255] [224 112 38 255] [255 224 162 255]]
-  :count 5
-  :name :ember
-  :category :volcanic
-  :family :orange
-  :brightness 0.235
-  :temperature 0.69
-  :saturation 0.707
-  :contrast 0.765
-  :mean-lightness 0.388
-  :hue-concentration 0.984
-  :tags #{"monochrome" "orange" "vivid"}}
+  {:hex ["#1C100C" "#542212" "#923A16" "#E07026" "#FFE0A2"]
+   :rgba [[28 16 12 255] [84 34 18 255] [146 58 22 255] [224 112 38 255] [255 224 162 255]]
+   :count 5
+   :name :ember
+   :category :volcanic
+   :family :orange
+   :brightness 0.235
+   :temperature 0.69
+   :saturation 0.8
+   :contrast 0.765
+   :mean-lightness 0.425
+   :hue-concentration 0.957
+   :tags #{"monochrome" "orange" "vivid"}}
  :volcanic/lava-flow
- {:hex ["#160C0A" "#481810" "#842816" "#DC521E" "#FFD27E"]
-  :rgba [[22 12 10 255] [72 24 16 255] [132 40 22 255] [220 82 30 255] [255 210 126 255]]
-  :count 5
-  :name :lava-flow
-  :category :volcanic
-  :family :orange
-  :brightness 0.198
-  :temperature 0.695
-  :saturation 0.697
-  :contrast 0.684
-  :mean-lightness 0.355
-  :hue-concentration 0.975
-  :tags #{"dark" "monochrome" "orange" "vivid"}}
+  {:hex ["#160C0A" "#481810" "#842816" "#DC521E" "#FFD27E"]
+   :rgba [[22 12 10 255] [72 24 16 255] [132 40 22 255] [220 82 30 255] [255 210 126 255]]
+   :count 5
+   :name :lava-flow
+   :category :volcanic
+   :family :orange
+   :brightness 0.198
+   :temperature 0.695
+   :saturation 0.765
+   :contrast 0.684
+   :mean-lightness 0.381
+   :hue-concentration 0.951
+   :tags #{"dark" "monochrome" "orange" "vivid"}}
  :volcanic/obsidian
- {:hex ["#0A0808" "#241410" "#5A2014" "#A83A18" "#F08A2E"]
-  :rgba [[10 8 8 255] [36 20 16 255] [90 32 20 255] [168 58 24 255] [240 138 46 255]]
-  :count 5
-  :name :obsidian
-  :category :volcanic
-  :family :orange
-  :brightness 0.105
-  :temperature 0.669
-  :saturation 0.55
-  :contrast 0.366
-  :mean-lightness 0.258
-  :hue-concentration 0.99
-  :tags #{"dark" "earth-tone" "lava" "low-contrast" "monochrome" "orange"}}
+  {:hex ["#0A0808" "#241410" "#5A2014" "#A83A18" "#F08A2E"]
+   :rgba [[10 8 8 255] [36 20 16 255] [90 32 20 255] [168 58 24 255] [240 138 46 255]]
+   :count 5
+   :name :obsidian
+   :category :volcanic
+   :family :orange
+   :brightness 0.105
+   :temperature 0.669
+   :saturation 0.607
+   :contrast 0.366
+   :mean-lightness 0.278
+   :hue-concentration 0.992
+   :tags #{"dark" "earth-tone" "lava" "low-contrast" "monochrome" "orange"}}
  :volcanic/sulfur
- {:hex ["#1C1A08" "#444010" "#7E7A18" "#BEB82E" "#ECE86A"]
-  :rgba [[28 26 8 255] [68 64 16 255] [126 122 24 255] [190 184 46 255] [236 232 106 255]]
-  :count 5
-  :name :sulfur
-  :category :volcanic
-  :family :yellow
-  :brightness 0.293
-  :temperature 0.676
-  :saturation 0.648
-  :contrast 0.756
-  :mean-lightness 0.333
-  :hue-concentration 1.0
-  :tags #{"monochrome" "sulfur" "toxic" "vivid" "yellow"}}
+  {:hex ["#1C1A08" "#444010" "#7E7A18" "#BEB82E" "#ECE86A"]
+   :rgba [[28 26 8 255] [68 64 16 255] [126 122 24 255] [190 184 46 255] [236 232 106 255]]
+   :count 5
+   :name :sulfur
+   :category :volcanic
+   :family :yellow
+   :brightness 0.293
+   :temperature 0.676
+   :saturation 0.852
+   :contrast 0.756
+   :mean-lightness 0.498
+   :hue-concentration 1.0
+   :tags #{"monochrome" "sulfur" "toxic" "vivid" "yellow"}}
  :volcanic/volcanic
- {:hex ["#120E0E" "#361C16" "#662A1C" "#B04826" "#FFBC66"]
-  :rgba [[18 14 14 255] [54 28 22 255] [102 42 28 255] [176 72 38 255] [255 188 102 255]]
-  :count 5
-  :name :volcanic
-  :category :volcanic
-  :family :orange
-  :brightness 0.158
-  :temperature 0.657
-  :saturation 0.552
-  :contrast 0.577
-  :mean-lightness 0.317
-  :hue-concentration 0.982
-  :tags #{"dark" "low-contrast" "monochrome" "orange"}}}
+  {:hex ["#120E0E" "#361C16" "#662A1C" "#B04826" "#FFBC66"]
+   :rgba [[18 14 14 255] [54 28 22 255] [102 42 28 255] [176 72 38 255] [255 188 102 255]]
+   :count 5
+   :name :volcanic
+   :category :volcanic
+   :family :orange
+   :brightness 0.158
+   :temperature 0.657
+   :saturation 0.624
+   :contrast 0.577
+   :mean-lightness 0.337
+   :hue-concentration 0.973
+   :tags #{"dark" "earth-tone" "low-contrast" "monochrome" "orange"}}
+}

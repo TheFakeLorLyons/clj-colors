@@ -27,8 +27,8 @@
                             when one is given, so a studio save is one
                             atomic action against both registry and file
      POST /api/unregister {:key k :path p?}
-                         -> unregister-palette!, then surgical removal of
-                            the entry from the file at :path when given
+                         -> unregister-palette!, then save-registry! to
+                            the file at :path when one is given
      POST /api/save      {:path p} -> save-registry! (surgical for
                             existing files; see clj-colors.main)
 
@@ -41,7 +41,9 @@
             [clojure.java.browse :as browse]
             [clojure.java.io :as io]
             [org.httpkit.server :as http]
-            [clj-colors.main :as main]))
+            [clj-colors.color :as color]
+            [clj-colors.main :as main]
+            [clj-colors.meta :as meta]))
 
 (def ^:private scittle-version "0.8.31")
 
@@ -66,11 +68,6 @@
 
 ;; Page shell --------------------------------------------------------------------
 
-(defn- css-source []
-  (if-let [r (io/resource "gallery/gallery_styles.css")]
-    (slurp r)
-    (throw (ex-info "resources/gallery/gallery_styles.css not found on classpath" {}))))
-
 (defn- page-html []
   (str "<!DOCTYPE html>"
        "<html><head><meta charset='utf-8'>"
@@ -91,6 +88,11 @@
   (if-let [r (io/resource "gallery/gallery.cljs")]
     (slurp r)
     (throw (ex-info "resources/gallery/gallery.cljs not found on classpath" {}))))
+
+(defn- css-source []
+  (if-let [r (io/resource "gallery/gallery_styles.css")]
+    (slurp r)
+    (throw (ex-info "resources/gallery/gallery_styles.css not found on classpath" {}))))
 
 ;; Request handling ----------------------------------------------------------------
 
@@ -113,8 +115,11 @@
                                  (ex-message e))}))))
 
 (defn- handle-register [req]
-  (let [{:keys [key colors tags path]} (read-body req)
-        palette (main/register-palette! key colors {:tags tags})]
+  (let [{:keys [key colors tags weights path]} (read-body req)
+        palette (main/register-palette! key colors
+                                        (cond-> {}
+                                          (seq tags)    (assoc :tags tags)
+                                          (seq weights) (assoc :weights weights)))]
     (edn-response (cond-> {:registered key :palette palette}
                     path (assoc :saved (main/save-registry! path))))))
 
@@ -122,12 +127,80 @@
   (let [{:keys [key path]} (read-body req)]
     (main/unregister-palette! key)
     (edn-response (cond-> {:unregistered key}
-                    path (assoc :removed (main/remove-palette-from-file! path key))))))
+                    path (assoc :saved (main/save-registry! path))))))
 
 (defn- handle-save [req]
   (let [{:keys [path]} (read-body req)
         path (or path "palettes.edn")]
     (edn-response {:saved (main/save-registry! path)})))
+
+(defn- handle-ramp
+  "Perceptual resample via color/ramp. Body:
+   {:colors [hex...] :n N :space :oklab|:oklch :weights [..]?}
+   -> {:ramp [hex...]}. Hex in, hex out, so it drops straight into stops."
+  [req]
+  (let [{:keys [colors n space weights]} (read-body req)]
+    (edn-response
+     {:ramp (color/ramp colors (or n 5)
+                        (cond-> {}
+                          space         (assoc :space space)
+                          (seq weights)  (assoc :weights weights)))})))
+
+(defn- handle-blend
+  "Two-color blend via color/blend. Body:
+   {:from c1 :to c2 :t 0.5 :space :oklab|:oklch}
+   -> {:hex h :rgba [r g b a]}."
+  [req]
+  (let [{:keys [from to t space]} (read-body req)
+        rgba (color/blend from to (double (or t 0.5))
+                          (cond-> {} space (assoc :space space)))]
+    (edn-response {:hex (color/rgba->hex rgba) :rgba rgba})))
+
+(defn- handle-convert
+  "Bidirectional conversion. Accepts one of :hex, :rgba, :oklab [L a b], or
+   :oklch [L C H] and returns them all. The studio works in 3-element
+   oklab/oklch; color.clj carries alpha as a 4th element, so we append 1.0
+   going in and take the first 3 coming out."
+  [req]
+  (let [{:keys [hex rgba oklab oklch]} (read-body req)
+        rgba (cond
+               hex   (color/hex->rgba hex)
+               rgba  rgba
+               oklch (color/oklab->rgba (color/oklch->oklab (conj (vec oklch) 1.0)))
+               oklab (color/oklab->rgba (conj (vec oklab) 1.0))
+               :else (throw (ex-info "convert needs :hex, :rgba, :oklab, or :oklch" {})))
+        lab  (color/rgba->oklab rgba)]
+    (edn-response
+     {:hex   (color/rgba->hex rgba)
+      :rgba  rgba
+      :hsluv (color/rgba->hsluv rgba)
+      :oklab (vec (take 3 lab))
+      :oklch (vec (take 3 (color/oklab->oklch lab)))})))
+
+(def routes
+  [[:get  "/" page-html]
+   [:get  "/gallery.cljs" cljs-source]
+   [:get  "/gallery_styles.css" css-source]
+
+   [:get  "/api/palettes" #(edn-response (catalog))]
+
+   [:post "/api/register"   #(safely handle-register %)]
+   [:post "/api/unregister" #(safely handle-unregister %)]
+   [:post "/api/save"       #(safely handle-save %)]
+   [:post "/api/ramp"       #(safely handle-ramp %)]
+   [:post "/api/blend"      #(safely handle-blend %)]
+   [:post "/api/convert"    #(safely handle-convert %)]])
+
+(defn- handler [{:keys [request-method uri] :as req}]
+  (if-let [[_ _ f] (some (fn [[m u f]]
+                           (when (and (= m request-method)
+                                      (= u uri))
+                             [m u f]))
+                         routes)]
+    (f req)
+    {:status 404
+     :headers {"Content-Type" "text/plain"}
+     :body "not found"}))
 
 (defn- handler [{:keys [request-method uri] :as req}]
   (cond
@@ -154,6 +227,15 @@
 
     (and (= :post request-method) (= "/api/save" uri))
     (safely handle-save req)
+
+    (and (= :post request-method) (= "/api/ramp" uri))
+    (safely handle-ramp req)
+
+    (and (= :post request-method) (= "/api/blend" uri))
+    (safely handle-blend req)
+
+    (and (= :post request-method) (= "/api/convert" uri))
+    (safely handle-convert req)
 
     :else
     {:status 404 :headers {"Content-Type" "text/plain"} :body "not found"}))

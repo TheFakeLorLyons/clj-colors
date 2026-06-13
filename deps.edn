@@ -1,6 +1,7 @@
 {:paths ["src" "resources"]
  :deps {http-kit/http-kit {:mvn/version "2.8.1"}
-        org.clojure/clojure {:mvn/version "1.12.0"}}
+        org.clojure/clojure {:mvn/version "1.12.0"}
+        org.hsluv/hsluv {:mvn/version "1.0"}}
  :aliases
  {:build {:deps {io.github.clojure/tools.build {:mvn/version "0.10.5"}
                  slipset/deps-deploy {:mvn/version "0.2.2"}}

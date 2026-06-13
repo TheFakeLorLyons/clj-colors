@@ -121,74 +121,127 @@
   (testing "removal sticks"
     (is (nil? (main/get-palette :test/scratch)))))
 
-;; Surgical persistence ----------------------------------------------------------------
-;; These run against a temp file, never the bundled resources/palettes.edn.
+;; Weights ----------------------------------------------------------------------
 
-(defn- temp-edn-path []
-  (let [f (java.io.File/createTempFile "clj-colors-test" ".edn")]
+(deftest weights-default-and-roundtrip
+  (testing "even distribution when none given"
+    (is (= [0.25 0.25 0.25 0.25] (main/palette-weights :synthwave/outrun))))
+  (testing "weights normalize on enrich"
+    (let [reg (main/add-palette {} :probe/weighted ["#000000" "#FFFFFF"]
+                                {:weights [3 1]})]
+      (is (= [0.75 0.25] (:weights (get reg :probe/weighted))))))
+  (testing "even palettes carry no :weights key"
+    (is (nil? (:weights (main/get-palette :ocean/abyss)))))
+  (testing "mismatched weight count throws"
+    (is (thrown? clojure.lang.ExceptionInfo
+                 (main/add-palette {} :probe/bad ["#000000" "#FFFFFF"]
+                                   {:weights [1 2 3]})))))
+
+(deftest weighted-metadata-shifts
+  (let [palette (fn [opts]
+                  (get (main/add-palette {} :p/x ["#000000" "#FFFFFF"] opts) :p/x))
+        dark    (palette {:weights [9 1]})
+        even    (palette {})
+        light   (palette {:weights [1 9]})]
+    (testing "brightness follows prominence"
+      (is (< (:brightness dark) (:brightness even) (:brightness light))))
+    (testing "contrast stays the full range regardless of weights"
+      (is (= (:contrast dark) (:contrast even) (:contrast light))))))
+
+;; Persistence ---------------------------------------------------------------------
+;; The registry file is machine-owned: saving renders the whole registry.
+;; These run against temp files, never the bundled resources/palettes.edn.
+
+(defn- temp-path [suffix]
+  (let [f (java.io.File/createTempFile "clj-colors-test" suffix)]
     (.delete f)
     (.deleteOnExit f)
     (str f)))
 
-(deftest surgical-persistence
-  (let [path (temp-edn-path)
+(deftest rendered-file-shape
+  (let [path (temp-path ".edn")
         reg  (-> {}
                  (main/add-palette :arctic/aa ["#101010" "#F0F0F0"] {:tags ["one"]})
-                 (main/add-palette :ocean/bb  ["#001122" "#AABBCC"] {:tags ["two"]}))]
-
-    (testing "a fresh path gets the full rendering"
-      (main/save-registry! path reg)
-      (let [out (slurp path)]
-        (is (str/includes? out ":arctic/aa"))
-        (is (str/includes? out ";; arctic"))))
-
-    (testing "hand-written comments survive a sync that adds a palette"
-      (spit path (str ";; hand index, do not touch\n" (slurp path)))
-      (let [reg (main/add-palette reg :arctic/cc ["#202020" "#E0E0E0"]
-                                  {:tags ["three"]})]
-        (main/save-registry! path reg)
-        (let [out (slurp path)]
-          (is (str/includes? out ";; hand index, do not touch"))
-          (is (str/includes? out ":arctic/cc"))
-          (testing "and the new entry lands inside its category block"
-            (is (< (str/index-of out ":arctic/cc")
-                   (str/index-of out ":ocean/bb")))))))
-
-    (testing "a changed palette is replaced in place; others untouched"
-      (let [reg (-> reg
-                    (main/add-palette :arctic/cc ["#202020" "#E0E0E0"]
-                                      {:tags ["three"]})
-                    (main/add-palette :ocean/bb ["#334455" "#CCDDEE"]
-                                      {:tags ["two"]}))]
-        (main/save-registry! path reg)
-        (let [out (slurp path)]
-          (is (str/includes? out "#334455"))
-          (is (not (str/includes? out "#001122")))
-          (is (str/includes? out "#101010"))
-          (is (str/includes? out ";; hand index, do not touch")))))
-
-    (testing "the synced file loads back as a registry"
-      (is (= #{:arctic/aa :arctic/cc :ocean/bb}
-             (set (keys (main/load-palettes path))))))
-
-    (testing "removal deletes exactly the entry's lines"
-      (main/remove-palette-from-file! path :arctic/cc)
-      (let [out (slurp path)]
-        (is (not (str/includes? out ":arctic/cc")))
-        (is (str/includes? out ":arctic/aa"))
-        (is (str/includes? out ";; hand index, do not touch"))))
-
-    (testing "removing the last of a category takes its header along"
-      (main/remove-palette-from-file! path :ocean/bb)
+                 (main/add-palette :ocean/bb ["#001122" "#AABBCC"]
+                                   {:weights [0.7 0.3]}))]
+    (main/save-registry! path reg)
+    (let [out (slurp path)]
+      (testing "category comments and grouping, sorted"
+        (is (str/includes? out "; Arctic"))
+        (is (str/includes? out "; Ocean"))
+        (is (< (str/index-of out ":arctic/aa")
+               (str/index-of out ":ocean/bb"))))
+      (testing "one blank line between category groups"
+        (is (str/includes? out "}\n\n ; Ocean")))
+      (testing "weights are written only when given"
+        (is (str/includes? out ":weights [0.7 0.3]"))
+        (is (not (re-find #":arctic/aa[^}]*:weights" out)))))
+    (testing "the file round-trips through load-palettes"
+      (let [loaded (main/load-palettes path)]
+        (is (= #{:arctic/aa :ocean/bb} (set (keys loaded))))
+        (is (= [0.7 0.3] (:weights (get loaded :ocean/bb))))))
+    (testing "the index is generated beside the registry file"
+      (let [idx (clojure.java.io/file (.getParent (clojure.java.io/file path))
+                                      "swatch_index.md")]
+        (is (.exists idx))
+        (is (str/includes? (slurp idx) "## Arctic"))))
+    (testing "removal is just saving a registry without the palette"
+      (main/save-registry! path (main/remove-palette reg :ocean/bb))
       (let [out (slurp path)]
         (is (not (str/includes? out ":ocean/bb")))
-        (is (not (str/includes? out ";; ocean")))
-        (is (str/includes? out ";; arctic"))))
+        (is (not (str/includes? out "; Ocean")))
+        (is (str/includes? out ":arctic/aa"))))))
 
-    (testing "removing a key not in the file is a quiet no-op"
-      (let [before (slurp path)]
-        (is (nil? (main/remove-palette-from-file! path :never/was)))
-        (is (= before (slurp path)))))))
+(deftest index-generation
+  (let [path (temp-path ".md")
+        reg  (-> {}
+                 (main/add-palette :arctic/aa ["#101010" "#F0F0F0"])
+                 (main/add-palette :ocean/bb ["#001122" "#AABBCC"]))]
+    (main/write-index! path reg)
+    (let [out (slurp path)]
+      (is (str/includes? out "# Swatch Index"))
+      (is (str/includes? out "## Arctic"))
+      (is (str/includes? out "- aa")))
+    (testing "regeneration drops removed palettes"
+      (main/write-index! path (main/remove-palette reg :ocean/bb))
+      (let [out (slurp path)]
+        (is (not (str/includes? out "## Ocean")))
+        (is (str/includes? out "## Arctic"))))))
+
+;; Oklab blending --------------------------------------------------------------
+
+(deftest oklab-roundtrip
+  (doseq [h ["#FF0000" "#00FF00" "#0000FF" "#121810" "#A8DCEC"]]
+    (is (= (color/hex->rgba h)
+           (color/oklab->rgba (color/rgba->oklab (color/hex->rgba h))))
+        h))
+  (testing "white maps to L=1, a=b=0"
+    (let [[L a b] (color/rgba->oklab [255 255 255 255])]
+      (is (< 0.999 L 1.001))
+      (is (< (Math/abs (double a)) 1e-6))
+      (is (< (Math/abs (double b)) 1e-6)))))
+
+(deftest perceptual-ramp
+  (let [r (color/ramp ["#0000FF" "#FFFF00"] 5)]
+    (testing "hex in means hex out, endpoints preserved, n stops"
+      (is (= 5 (count r)))
+      (is (= "#0000FF" (first r)))
+      (is (= "#FFFF00" (last r))))
+    (testing "the midpoint is not sRGB gray mud"
+      (let [[mr mg mb] (color/hex->rgba (nth r 2))]
+        (is (not= mr mg mb)))))
+  (testing "oklch ramp hits its endpoints too"
+    (let [r (color/ramp ["#C00000" "#0040A0"] 7 {:space :oklch})]
+      (is (= 7 (count r)))
+      (is (= "#C00000" (first r)))
+      (is (= "#0040A0" (last r)))))
+  (testing "weights shift the ramp toward the dominant color"
+    (let [heavy (color/ramp [[0 0 0] [255 255 255]] 9 {:weights [9 1]})
+          [r' _ _] (nth heavy 4)]
+      (is (< r' 128))))
+  (testing "unknown space throws"
+    (is (thrown? clojure.lang.ExceptionInfo
+                 (color/ramp ["#000000" "#FFFFFF"] 3 {:space :sideways})))))
 
 (comment
   (run-tests))

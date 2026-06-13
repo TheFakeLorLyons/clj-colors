@@ -17,6 +17,10 @@ which might be accessed as a tool call via the api.
 Swatch can also generate SVG gradients, transparency fades, and other color assets directly from 
 palette definitions; allowing palettes to move seamlessly from data to design.
 
+Add this to your clojure project in deps.edn with:
+
+`com.github.thefakelorlyons/clj-colors {:mvn/version "0.1.1"}`
+
 ## Metadata
 
 Each loaded swatch carries derived fields alongside its colors:
@@ -42,6 +46,7 @@ A swatch is stored as its hex & rgba colors plus optional tags:
  :forest/jungle
  {:hex ["#0C1A12" "#183A26" "#2A623E" "#4C9660" "#C2ECBC"]
   :rgba [[12 26 18 255] [24 58 38 255] [42 98 62 255] [76 150 96 255] [194 236 188 255]]
+  :weights [0.3 0.2 0.2 0.1 0.2]; Optional, even distribution assumed if unspecified.
   :count 5
   :name :jungle
   :category :forest
@@ -290,6 +295,33 @@ clojure -M:test
 ; or, in tests/main_test.clj run
 (run-tests)
 ```
+
+## TODOs
+
+### Palette content
+
+- Add accessibility-focused palettes (WCAG AA/AAA compliant pairs, colorblind-safe sets, high-contrast UI palettes)
+- Add palettes derived from famous paintings, natural phenomena, or geographic regions
+- Semantic tag inference from palette name tokens weighted by color prominence
+
+### Color science / studio
+
+- Add a deltaE distance metric between stops so you can see perceptual similarity at a glance
+- Harmony suggestions: given the current stops, suggest complementary/triadic/analogous additions in oklch hue space
+- Show gamut warnings when an oklch/oklab value falls outside sRGB
+- Add an interpolation preview: show what a gradient looks like in RGB vs oklab vs oklch space side by side
+
+### Gallery / Studio UX
+
+- "Similar palettes" suggestions when a palette is open in the studio, based on family/brightness/contrast distance
+- Collapsible oklch/oklab section per row
+- Drag to reorder stops
+- Copy palette as CSS custom properties, Tailwind config, or SVG gradient
+
+### Infrastructure
+
+- Provide functionality to export the full registry as a JSON file for interop with non-Clojure tooling
+- Hot reload: watch the registry file and push updates to open browser tabs via SSE
 
 ## Contributing
 
