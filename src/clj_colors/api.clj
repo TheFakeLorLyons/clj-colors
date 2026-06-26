@@ -5,6 +5,7 @@
    or model can scan."
   (:require [clojure.string :as str]
             [clj-colors.access :as access]
+            [clj-colors.extensions :as extensions]
             [clj-colors.main :as main]
             [clj-colors.fade :as fade]
             [clj-colors.svg :as svg]))
@@ -23,6 +24,7 @@
 (export main/palette-names)
 (export main/categories)
 (export main/all-palettes)
+(export main/palettes-in-category)
 
 ; Thematic getters
 (export access/palettes-by-family)
@@ -36,8 +38,10 @@
 (export access/get-purple-palettes)
 (export access/get-pink-palettes)
 (export access/get-neutral-palettes)
-(export access/get-category-palettes)
 (export access/get-tagged-palettes)
+
+
+(export extensions/list-loaded)
 
 ; Color extraction
 (export access/palette-hex)
@@ -73,20 +77,21 @@
           (println "    " (first (str/split-lines (:doc m)))))))))
 
 (defn catalog
-  "Lightweight data view of every palette: a vector of maps with :key, :family,
-   :category, :count, :tags, and :hex. Handy to hand to a tool or model so it
-   can choose a palette without loading the whole registry."
-  []
-  (->> (main/all-palettes)
-       (map (fn [[k p]]
-              {:key      k
-               :family   (:family p)
-               :category (:category p)
-               :count    (:count p)
-               :tags     (vec (:tags p))
-               :hex      (:hex p)}))
-       (sort-by :key)
-       vec))
+         "Lightweight data view of every palette: a vector of maps with :key,
+   :family, :category, :count, attribute :tags, and :hex. Handy to hand
+   to a tool or model so it can choose a palette without loading the
+   whole registry."
+         []
+         (->> (main/all-palettes)
+              (map (fn [[k p]]
+                     {:key      k
+                      :family   (:family p)
+                      :category (:category p)
+                      :count    (:count p)
+                      :tags     (get-in p [:attributes :tags] {})
+                      :hex      (:hex p)}))
+              (sort-by :key)
+              vec))
 
 (comment
   ; Protocols answer the question "how do different types implement the same

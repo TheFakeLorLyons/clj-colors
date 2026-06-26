@@ -1,0 +1,6 @@
+{:colors {"#102030" 1.0}
+ :tags {:kaggle-emotional/k0445 {:weight 0.8}
+        :nature.flora/cherry {:weight 1.0}}
+ :sigma 0.06
+ :category :nature.flora
+ :rationale "Tests that namespaced keywords with digits parse correctly."}

@@ -1,0 +1,7 @@
+```edn
+{:colors {"#abcdef" 1.0}
+ :tags {:simple {:weight 1.0}}
+ :sigma 0.05
+ :category :test
+ :rationale "Fenced response."}
+```

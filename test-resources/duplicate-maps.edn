@@ -1,0 +1,13 @@
+Let me think about this first.
+
+{:colors {"#000000" 1.0}
+ :tags {}}
+
+Actually, on reflection:
+
+{:colors {"#0a0a0c" 0.5
+          "#1a1015" 0.5}
+ :tags {:obsidian {:weight 1.0}}
+ :sigma 0.04
+ :category :mineral
+ :rationale "Better version."}

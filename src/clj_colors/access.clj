@@ -25,38 +25,39 @@
 
 (def-family-getters)
 
-(defn get-category-palettes
-  "key->palette map of every palette in a category, e.g. :ocean."
-  [category]
-  (main/palettes-in-category category))
-
 (defn get-tagged-palettes
-  "Find palettes by tags. With no tags, returns the whole registry in
-   either match mode.
+  "Find palettes by attribute tags (the semantic kind from
+   :attributes :tags). With no tags, returns the whole registry.
 
-   Defaults to relaxed matching:
-     (get-tagged-palettes \"forest\" \"earth-tone\")
-      => Returns palettes tagged with either \"forest\" or \"earth-tone\".
+   Defaults to relaxed matching (any-mode):
+     (get-tagged-palettes :passionate :bold)
+       => palettes carrying either tag
 
    Require all tags:
-     (get-tagged-palettes {:match :all}
-                          \"forest\"
-                          \"earth-tone\")
-      => Returns an empty map, because no palette carries both."
+     (get-tagged-palettes {:match :all} :passionate :bold)
+
+   Custom threshold (default 0.0 = any presence):
+     (get-tagged-palettes {:match :all :threshold 0.05} :passionate)
+
+   Tags absent from a palette never match, regardless of threshold."
   [& args]
-  (let [[opts tags]
-        (if (map? (first args))
-          [(first args) (rest args)]
-          [{} args])
-        match-mode (:match opts :any)]
+  (let [[opts tags] (if (map? (first args))
+                      [(first args) (rest args)]
+                      [{} args])
+        match-mode  (:match opts :any)
+        threshold   (:threshold opts 0.0)
+        all?        (= match-mode :all)
+        score-ok?   (fn [attr-tags tag]
+                      (when-let [score (get attr-tags tag)]
+                        (>= score threshold)))
+        pred (fn [p]
+               (let [attr-tags (get-in p [:attributes :tags] {})]
+                 (if all?
+                   (every? #(score-ok? attr-tags %) tags)
+                   (some   #(score-ok? attr-tags %) tags))))]
     (if (empty? tags)
       (main/all-palettes)
-      (case match-mode
-        :all (apply main/palettes-with-tags tags)
-        :any (apply main/palettes-with-any-tags tags)
-        (throw
-         (ex-info "Unknown match mode"
-                  {:match match-mode}))))))
+      (into {} (filter (fn [[_ p]] (pred p)) (main/all-palettes))))))
 
 ; Color extraction
 (defn palette-hex
@@ -77,12 +78,18 @@
 ;; Random selection, for generative callers
 
 (defn- pool
-  [{:keys [family category tags min-count] :or {min-count 0}}]
+  [{:keys [family category attr-tags min-count attr-threshold]
+    :or {min-count 0 attr-threshold 0.0}}]
   (cond->> (vals (main/all-palettes))
-    family      (filter #(= family (:family %)))
-    category    (filter #(= category (:category %)))
-    (seq tags)  (filter #(every? (:tags %) tags))
-    true        (filter #(>= (:count %) min-count))))
+    family        (filter #(= family (:family %)))
+    category      (filter #(= category (:category %)))
+    (seq attr-tags)
+    (filter (fn [p]
+              (every? (fn [t]
+                        (when-let [score (get-in p [:attributes :tags t])]
+                          (>= score attr-threshold)))
+                      attr-tags)))
+    true          (filter #(>= (:count %) min-count))))
 
 (defn random-palette
   "A random enriched palette matching opts, or nil.

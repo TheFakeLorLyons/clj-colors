@@ -1,0 +1,14 @@
+Here's the cherry-blossom association:
+
+{:colors {"#fce4ec" 0.40
+          "#f8bbd0" 0.30
+          "#f48fb1" 0.20
+          "#e1bee7" 0.10}
+ :tags {:cherry-blossom {:weight 1.0}
+        :sakura {:weight 1.0}
+        :ephemeral {:weight 0.7 :specificity 1.5}}
+ :sigma 0.07
+ :category :nature.flora
+ :rationale "Spring cherry blossom palette."}
+
+Hope this helps!
