@@ -316,7 +316,7 @@
          (llm/one-shot *system-prompt* user-msg
                        {:referent referent-name
                         :extra-context extra-context})]
-     (spit (format "resources/test-resources/%s.edn" referent-name) raw)
+     (spit (format "test-resources/%s.edn" referent-name) raw)
      (draft/stage! current-draft {:referent referent-name} entry usage)
      entry)))
 
