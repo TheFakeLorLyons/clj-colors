@@ -36,6 +36,9 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-deps-
 
+    - name: Bootstrap compressed data
+      run: clojure -M -e "(require '[clj-colors.compression :as compression]) (compression/ensure-all-unpacked! \"resources\")"
+
     - name: Run tests
       run: clojure -M:test
 

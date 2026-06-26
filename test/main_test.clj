@@ -5,7 +5,14 @@
             [clj-colors.associations :as associations]
             [clj-colors.color :as color]
             [clj-colors.color-tags :as color-tags]
+            [clj-colors.compression :as compression]
             [clj-colors.main :as main]))
+
+(defn- bootstrap-compressed-data [f]
+  (compression/ensure-all-unpacked! "resources")
+  (f))
+
+(use-fixtures :once bootstrap-compressed-data)
 
 ;; Color conversions ------------------------------------------------------------
 
