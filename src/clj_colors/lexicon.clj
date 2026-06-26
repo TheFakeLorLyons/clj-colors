@@ -170,7 +170,7 @@ vector.")
    skipped silently; pass explicit paths to override defaults."
   ([]
    (collect-corpus-tags
-    {:color-tags-path   "resources/color_tags_base.edn"
+    {:color-tags-path   "resources/color_tags.edn"
      :associations-path "resources/associations.edn"
      :palettes-path     "resources/palettes.edn"}))
   ([{:keys [color-tags-path associations-path palettes-path]}]

@@ -75,8 +75,7 @@
 (defonce data
   (delay
     (let [smoothed (io/resource "color_tags.edn")
-          base     (io/resource "color_tags_base.edn")
-          raw      (-> (or smoothed base) slurp edn/read-string)]
+          raw      (-> smoothed slurp edn/read-string)]
       (apply-denylist raw))))
 
 (defonce ^:private cache (atom nil))
