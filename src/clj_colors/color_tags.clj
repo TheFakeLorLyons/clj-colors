@@ -4,6 +4,7 @@
    to {:weight ...} (weights sum to 1.0); :color-families is the
    unfiltered keyword set from Color-Pedia's Keywords column."
   (:require [clj-colors.color :as color]
+            [clj-colors.compression :as compression]
             [clojure.edn :as edn]
             [clojure.java.io :as io]
             [clojure.string :as str]))
@@ -74,9 +75,9 @@
 
 (defonce data
   (delay
-    (let [smoothed (io/resource "color_tags.edn")
-          raw      (-> smoothed slurp edn/read-string)]
-      (apply-denylist raw))))
+    (let [path "resources/color_tags.edn"]
+      (compression/ensure-unpacked! path)
+      (-> path slurp edn/read-string apply-denylist))))
 
 (defonce ^:private cache (atom nil))
 (defn invalidate! [] (reset! cache nil))
