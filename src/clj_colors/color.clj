@@ -4,6 +4,17 @@
   (:require [clojure.string :as str])
   (:import (org.hsluv HsluvColorConverter)))
 
+(defn round2 [x]
+  (/ (Math/round (* 100.0 (double x))) 100.0))
+
+(defn round-to
+  "Round x to the given number of decimal digits. With 4 digits,
+   0.0186 rounds to 0.0186, 0.0142 to 0.0142, 0.0098 to 0.0098, so
+   you can distinguish weak signals that round2 collapses into 0.01."
+  [x digits]
+  (let [m (Math/pow 10 (long digits))]
+    (/ (Math/round (* (double x) m)) m)))
+
 (defn- clamp-255 ^long [n]
   (long (max 0 (min 255 (Math/round (double n))))))
 

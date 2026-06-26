@@ -12,7 +12,6 @@
             [clj-colors.compatibility :as cc]
             [clj-colors.color :as color]
             [clj-colors.extensions :as extensions]
-            [clj-colors.ingest.smooth-weights :as smooth]
             [clj-colors.weights.base :as weights-base]
             [clj-colors.color-tags :as color-tags]))
 
@@ -246,6 +245,6 @@
          compressed-tags (into {}
                                (for [[t v] final-tags
                                      :when (>= v tag-threshold)]
-                                 [t (smooth/round-to (log-compress v) digits)]))]
+                                 [t (color/round-to (log-compress v) digits)]))]
      {:tags         compressed-tags
       :associations (into {} (filter (fn [[_ v]] (>= v assoc-threshold)) named-assocs))})))

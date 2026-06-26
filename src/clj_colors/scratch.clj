@@ -3,12 +3,12 @@
   (:require [clj-colors.access :as access]
             [clj-colors.associations :as associations]
             [clj-colors.api :as api]
+            [clj-colors.color :as color]
             [clj-colors.color-tags :as color-tags]
             [clj-colors.extensions :as extensions]
             [clj-colors.fade :as fade]
             [clj-colors.main :as main]
             [clj-colors.meta :as meta]
-            [clj-colors.ingest.smooth-weights :as smooth]
             [clj-colors.svg :as svg]
             [clj-colors.llm.batch :as batch]
             [clj-colors.llm.associative :as associative]
@@ -256,30 +256,30 @@
 
 ;; Validation runs -------------------------------------------------------------
 
-(defn trace-smooth
-  "Run smooth-color directly on one hex and report intermediates."
-  [hex]
-  (let [raw      (edn/read-string (slurp "resources/color_tags_base.edn"))
-        params   smooth/default-params
-        profiles (smooth/build-family-profiles raw)
-        grid     (smooth/build-spatial-grid raw (:grid-cells params))
-        entry    (get raw hex)
-        fam      (smooth/family-of entry)
-        profile  (get profiles fam)
-        own-tags (set (keys (:tags entry)))
-        first-t  (first own-tags)
-        result   (smooth/smooth-color hex entry raw profiles grid params)]
-    {:hex              hex
-     :raw-tags-count   (count (:tags entry))
-     :own-tags         own-tags
-     :family           fam
-     :profile-nil?     (nil? profile)
-     :profile-size     (:size profile)
-     :first-tag        first-t
-     :first-tag-type   (type first-t)
-     :contains-first?  (contains? own-tags first-t)
-     :result-tags      (:tags result)
-     :result-tag-count (count (:tags result))}))
+;(defn trace-smooth
+;  "Run smooth-color directly on one hex and report intermediates."
+;  [hex]
+;  (let [raw      (edn/read-string (slurp "resources/color_tags_base.edn"))
+;        params   smooth/default-params
+;        profiles (smooth/build-family-profiles raw)
+;        grid     (smooth/build-spatial-grid raw (:grid-cells params))
+;        entry    (get raw hex)
+;        fam      (smooth/family-of entry)
+;        profile  (get profiles fam)
+;        own-tags (set (keys (:tags entry)))
+;        first-t  (first own-tags)
+;        result   (smooth/smooth-color hex entry raw profiles grid params)]
+;    {:hex              hex
+;     :raw-tags-count   (count (:tags entry))
+;     :own-tags         own-tags
+;     :family           fam
+;     :profile-nil?     (nil? profile)
+;     :profile-size     (:size profile)
+;     :first-tag        first-t
+;     :first-tag-type   (type first-t)
+;     :contains-first?  (contains? own-tags first-t)
+;     :result-tags      (:tags result)
+;     :result-tag-count (count (:tags result))}))
 
 (defn inspect-tags
   "Recompute attribute tags for one palette at custom precision and
@@ -321,11 +321,11 @@
          tags    (->> (:tags attrs)
                       (sort-by (comp - val))
                       (mapv (fn [[tag w]]
-                              [tag (smooth/round-to w digits)])))
+                              [tag (color/round-to w digits)])))
          assocs  (->> (:associations attrs)
                       (sort-by (comp - val))
                       (mapv (fn [[a w]]
-                              [a (smooth/round-to w digits)])))]
+                              [a (color/round-to w digits)])))]
      {:key k
       :hex (:hex palette)
       :family (:family palette)
