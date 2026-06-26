@@ -21,7 +21,5 @@ src/clj_colors/ingest
 resources/images/swatch_capture_v0-1.png
 
 resources/color_tags.edn
-resources/associations.edn
-resources/palettes.edn
 resources/extensions/**/*.edn
 !resources/extensions/**/*.edn.gz
