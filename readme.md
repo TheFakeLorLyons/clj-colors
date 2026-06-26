@@ -30,7 +30,7 @@ While it might be hard to keep track of so many palettes for us as humans, the t
 Swatch can also generate SVG gradients, transparency fades, and other color assets directly from palette definitions; allowing palettes to move seamlessly from data to design.
 
 Add this to your clojure project in deps.edn with:
-`com.github.thefakelorlyons/clj-colors {:mvn/version "0.2.0"}`
+`com.github.thefakelorlyons/clj-colors {:mvn/version "0.2.10"}`
 
 ## The data model
 
