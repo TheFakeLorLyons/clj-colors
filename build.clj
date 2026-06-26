@@ -7,7 +7,7 @@
 ;;; To install jar:  clj -T:build jar
 
 (def lib 'com.github.thefakelorlyons/clj-colors)
-(def version "0.2.3")
+(def version "0.2.4")
 
 (def class-dir "target/classes")
 (def basis (b/create-basis {:project "deps.edn"}))

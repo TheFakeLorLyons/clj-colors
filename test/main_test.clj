@@ -1,6 +1,6 @@
 (ns main-test
   (:require [clojure.string :as str]
-            [clojure.test :refer [deftest is testing run-tests]]
+            [clojure.test :refer [deftest is testing run-tests use-fixtures]]
             [clj-colors.access :as access]
             [clj-colors.associations :as associations]
             [clj-colors.color :as color]
