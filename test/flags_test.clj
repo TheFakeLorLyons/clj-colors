@@ -11,6 +11,7 @@
    Score breakdown:  (score-all)
    Per-flag detail:  (score-flag :flag/japan)"
   (:require [clj-colors.llm.batch :as batch]
+            [benchmark :as bench]
             [clj-colors.color :as color]
             [clj-colors.associations :as associations]
             [clojure.set :as set]
@@ -505,209 +506,68 @@
      :matches expected-matches
      :hallucinations (filter (complement :matches?) actual-matches)}))
 
-(defn score-flag
-  [k]
-  (let [ref (get reference k)
-        proposal (get @associations/data k)]
-    (cond
-      (nil? ref)      {:status :no-reference :key k}
-      (nil? proposal) {:status :no-proposal :key k}
-      :else
-      (let [expected (:expected-colors ref)
-            actuals (set (:colors proposal))
-            tolerance (:tolerance ref 0.05)
-            {:keys [coverage hallucination-rate
-                    n-expected n-passing n-actual n-hallucinated
-                    matches hallucinations]}
-            (weighted-score expected actuals tolerance)
+;; ── Convenience wrappers ──────────────────────────────────────────
 
-            ;; Two-axis grading
-            coverage-grade   (cond
-                               (>= coverage 0.9)  :excellent
-                               (>= coverage 0.7)  :good
-                               (>= coverage 0.4)  :weak
-                               :else              :poor)
-            precision-grade  (cond
-                               (<= hallucination-rate 0.15) :clean
-                               (<= hallucination-rate 0.35) :loose
-                               (<= hallucination-rate 0.55) :noisy
-                               :else                        :inventive)
-            ;; Combined status retained for backward compat
-            status (cond
-                     (and (>= coverage 0.85) (<= hallucination-rate 0.2)) :pass
-                     (and (>= coverage 0.7)  (<= hallucination-rate 0.3)) :strong
-                     (>= coverage 0.4) :partial
-                     :else :fail)]
-        {:key k
-         :tier (:tier ref)
-         :status status
-         :coverage-grade coverage-grade
-         :precision-grade precision-grade
-         :coverage coverage
-         :hallucination-rate hallucination-rate
-         :n-expected n-expected
-         :n-passing n-passing
-         :n-actual n-actual
-         :n-hallucinated n-hallucinated
-         :matches matches
-         :hallucinations hallucinations
-         :notes (:notes ref)}))))
+(defn score-flag
+  "Per-flag detail."
+  [k]
+  (bench/score-spec reference @associations/data k))
 
 (defn score-summary
-  "Two-axis breakdown: coverage (got the right colors?) vs precision
-   (didn't add wrong ones?). Most actionable view of where to improve."
+  "Aggregate breakdown across all flags."
   []
-  (let [scored (mapv (fn [[k _]] (score-flag k)) reference)
-        valid  (remove #(contains? #{:no-proposal :no-reference}
-                                   (:status %))
-                       scored)]
-    {:total (count scored)
-     :scored (count valid)
-     :mean-coverage (/ (reduce + 0.0 (map :coverage valid))
-                       (count valid))
-     :mean-hallucination (/ (reduce + 0.0 (map :hallucination-rate valid))
-                            (count valid))
-     :coverage-distribution (frequencies (map :coverage-grade valid))
-     :precision-distribution (frequencies (map :precision-grade valid))
-     :by-tier (into {}
-                    (for [[tier entries] (group-by :tier valid)]
-                      [tier {:n (count entries)
-                             :mean-coverage (/ (reduce + 0.0 (map :coverage entries))
-                                               (count entries))
-                             :mean-hallucination
-                             (/ (reduce + 0.0 (map :hallucination-rate entries))
-                                (count entries))
-                             :pass (count (filter #(= :pass (:status %)) entries))
-                             :strong (count (filter #(= :strong (:status %)) entries))
-                             :partial (count (filter #(= :partial (:status %)) entries))}]))
-     :worst-precision (->> valid
-                           (sort-by :hallucination-rate >)
-                           (take 5)
-                           (map #(select-keys % [:key :hallucination-rate
-                                                 :coverage :hallucinations])))
-
-     :best-precision (->> valid
-                           (sort-by :hallucination-rate <)
-                           (take 5)
-                           (map #(select-keys % [:key :hallucination-rate
-                                                 :coverage :hallucinations])))
-     :worst-coverage (->> valid
-                          (sort-by :coverage)
-                          (take 5)
-                          (map #(select-keys % [:key :coverage :matches])))}))
-
-(defn hallucination-analysis
-  "For each flag with hallucinations, show what was added and check
-   the rationale for keywords explaining the addition. Helps spot
-   the pattern: 'added because culturally associated'."
-  []
-  (->> reference
-       keys
-       (map score-flag)
-       (filter #(pos? (:n-hallucinated %)))
-       (map (fn [r]
-              (let [proposal (get @associations/data (:key r))
-                    rationale (:rationale proposal "")]
-                {:key (:key r)
-                 :coverage (:coverage r)
-                 :hallucinated (mapv :actual (:hallucinations r))
-                 :rationale-hints
-                 (cond
-                   (re-find #"(?i)coat of arms" rationale)
-                   :coat-of-arms-expansion
-
-                   (re-find #"(?i)(landscape|jungle|sea|sky|land)" rationale)
-                   :landscape-expansion
-
-                   (re-find #"(?i)(traditional|cultural|heritage|festival|branding)" rationale)
-                   :cultural-expansion
-
-                   (re-find #"(?i)(construction|outline|print|render|fabric|substrate)" rationale)
-                   :rendering-variant
-
-                   (re-find #"(?i)(pantone|spec|official|variant)" rationale)
-                   :spec-variant
-
-                   :else :unknown)})))
-       (sort-by :key)))
+  (bench/summary (bench/score-all reference @associations/data)))
 
 (defn worst-failures
-  "Top N flags sorted by lowest weighted-pass-rate."
   ([] (worst-failures 10))
-  ([n]
-   (->> reference
-        keys
-        (map score-flag)
-        (filter #(contains? #{:fail :partial :strong} (:status %)))
-        (sort-by :weighted-pass-rate)
-        (take n))))
+  ([n] (bench/worst-failures
+        (bench/score-all reference @associations/data)
+        n)))
 
-;; ── Tests ──────────────────────────────────────────────────────────
+;; ── Tests ─────────────────────────────────────────────────────────
 
 (deftest reference-data-wellformed
-  (testing "every reference has the required fields and weights sum to 1"
+  (testing "every reference has the required fields and weights sum to ~1"
     (doseq [[k entry] reference]
-      (is (map? (:expected-colors entry))
-          (format "%s :expected-colors must be a map of hex->weight" k))
-      (is (number? (:tolerance entry))
-          (format "%s missing :tolerance" k))
-      (is (keyword? (:tier entry))
-          (format "%s missing :tier" k))
-      (is (string? (:source entry))
-          (format "%s missing :source citation" k))
+      (is (map? (:expected-colors entry)))
+      (is (number? (:tolerance entry)))
+      (is (keyword? (:tier entry)))
+      (is (string? (:source entry)))
       (let [weight-sum (reduce + 0.0 (vals (:expected-colors entry)))]
         (is (and (>= weight-sum 0.99) (<= weight-sum 1.01))
-            (format "%s weights sum to %.3f, not ~1.0" k weight-sum))))))
+            (format "%s weights sum to %.3f" k weight-sum))))))
 
 (deftest reference-tiers-balanced
   (testing "reference set has roughly 10 flags per tier"
     (let [by-tier (group-by (comp :tier val) reference)]
       (doseq [tier [:tier-1 :tier-2 :tier-3]]
-        (is (>= (count (get by-tier tier)) 8)
-            (format "Tier %s has fewer than 8 flags" tier))))))
+        (is (>= (count (get by-tier tier)) 8))))))
 
 (deftest tier-1-flags-pass
   (testing "simple flag designs should mostly pass"
-    (let [tier-1-scored (->> reference
-                             (filter #(= :tier-1 (:tier (val %))))
-                             keys
-                             (map score-flag)
-                             (remove #(= :no-proposal (:status %))))
-          n-scored (count tier-1-scored)
-          n-passing (count (filter #(= :pass (:status %)) tier-1-scored))]
+    (let [scores (->> reference
+                      (filter #(= :tier-1 (:tier (val %))))
+                      keys
+                      (mapv score-flag)
+                      (remove #(= :no-proposal (:status %))))
+          n-scored (count scores)
+          n-passing (count (filter #(= :pass (:status %)) scores))]
       (when (pos? n-scored)
         (is (>= (/ n-passing n-scored) 0.7)
-            (format "Tier 1 pass rate %d/%d below 70%% threshold"
-                    n-passing n-scored))))))
+            (format "Tier 1 pass rate %d/%d below 70%%" n-passing n-scored))))))
 
 (deftest tier-2-flags-mostly-pass
   (testing "distinctive multi-color flags should mostly pass"
-    (let [tier-2-scored (->> reference
-                             (filter #(= :tier-2 (:tier (val %))))
-                             keys
-                             (map score-flag)
-                             (remove #(= :no-proposal (:status %))))
-          n-scored (count tier-2-scored)
-          n-passing (count (filter #(= :pass (:status %)) tier-2-scored))]
+    (let [scores (->> reference
+                      (filter #(= :tier-2 (:tier (val %))))
+                      keys
+                      (mapv score-flag)
+                      (remove #(= :no-proposal (:status %))))
+          n-scored (count scores)
+          n-passing (count (filter #(= :pass (:status %)) scores))]
       (when (pos? n-scored)
         (is (>= (/ n-passing n-scored) 0.5)
-            (format "Tier 2 pass rate %d/%d below 50%% threshold"
-                    n-passing n-scored))))))
-
-(defn proposal-stats
-  "Show how many colors the LLM proposed per flag versus how many
-   the reference expects. Wildly mismatched counts suggest the LLM
-   misjudged abstraction level."
-  []
-  (->> reference
-       (mapv (fn [[k ref]]
-               (let [prop (get @clj-colors.associations/data k)]
-                 {:key k
-                  :expected-count (count (:expected-colors ref))
-                  :proposed-count (count (:colors prop))
-                  :tier (:tier ref)})))
-       (sort-by (fn [{:keys [proposed-count expected-count]}]
-                  (- (Math/abs (- proposed-count expected-count)))))))
+            (format "Tier 2 pass rate %d/%d below 50%%" n-passing n-scored))))))
 
 (comment
   ;; Workflow:

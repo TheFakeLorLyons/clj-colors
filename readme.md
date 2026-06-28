@@ -10,6 +10,8 @@ It includes powerful and easy to set up LLM integration at the REPL, just set an
 
 `(alter-var-root #'clj-colors.llm.core/*api-key* (constantly "sk-ant-api....rest-of-your-key"))`
 
+If you'd rather set the key once and forget it, export `ANTHROPIC_API_KEY` in your shell environment and it'll be picked up automatically. `src/clj_colors/scratch.clj` has a working example of both approaches.
+
 </td>
 <td width="40%">
 
@@ -30,7 +32,57 @@ While it might be hard to keep track of so many palettes for us as humans, the t
 Swatch can also generate SVG gradients, transparency fades, and other color assets directly from palette definitions; allowing palettes to move seamlessly from data to design.
 
 Add this to your clojure project in deps.edn with:
+
 `com.github.thefakelorlyons/clj-colors {:mvn/version "0.2.10"}`
+
+### After including the dependency:
+Open `src/clj_colors/app/gallery.clj` in your editor and evaluate the namespace. Initial load takes a minute or two... You'll see a progress trace as palettes refresh through two enrichment passes. The repeat pass is 'intentional' (sort of), not exactly bug, since some attributes depend on values computed in the first pass. The print statements are left in so you can see it working.
+
+Once the namespace is loaded:
+```clojure
+(gallery/serve!)
+```
+
+That starts the studio at `http://localhost:8350`. You can browse, edit, and create palettes and associations from there.
+
+### Running the tests
+
+```bash
+clojure -M:test
+```
+```clojure
+; ...or you can (run-tests) in any of the test namespaces...
+```
+
+This covers parsing, persistence, morphology, the compression bootstrap, and structural invariants on the bundled data. The "Flag Accuracy Benchmark" also runs here and asserts pass-rate thresholds per tier; it doesn't make any LLM calls and just scores whatever's already in your associations registry.
+
+### Benchmarking against any reference set
+
+The benchmark testing is generic over the data shape:
+```clojure
+;map can be scored against any {ref-key {:colors {hex weight}}}
+{:referent-name 
+    {:expected-colors {hex weight}, 
+     :tolerance n, 
+     :tier :keyword, 
+     :source "..."}} 
+``` 
+Flags are the example currently shipped, but the same pipeline works for flowers, gemstones, brand palettes, planets, or anything else where you can name a referent and specify what colors it should have.
+
+To benchmark a custom set, write a reference map in the same shape as `flags-test/reference`, then:
+
+```clojure
+(require '[clj-colors.benchmark :as bench])
+
+;; Single spec
+(bench/score-spec my-reference @associations/data :flag/japan)
+;; All specs at once
+(bench/score-all my-reference @associations/data)
+;; Aggregate summary
+(bench/summary (bench/score-all my-reference @associations/data))
+```
+
+You get per-spec recall, precision, F1, weighted coverage, hallucination rate, distance distributions, and a status grade. The `notebooks/benchmark.clj` notebook renders the same data as interactive charts via Clay; point its `reference` import at your namespace and the entire visualization pipeline works on your new domain unchanged.
 
 ## The data model
 

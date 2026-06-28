@@ -1401,6 +1401,25 @@ or [{:category :ocean :referents [\"coral\" \"reef\"]}]"
            :keep-set #{}
            :pending? false}))
 
+(defn- reset-batch-form!
+  "Reset the form inputs (entries, namespace, bulk input) but
+   preserve any drafts already generated. Lets the user start a
+   new batch spec while keeping previous results visible for
+   review or acceptance.
+
+   To clear results, use 'Discard all' in the results panel."
+  [_kind]
+  (swap! batch-state
+         (fn [s]
+           (assoc s
+                  :mode :explicit
+                  :namespace ""
+                  :extra-context ""
+                  :entries [(blank-entry)]
+                  :category-counts [(blank-category)]
+                  :bulk-input ""
+                  :namespace-error nil))))
+
 (defn batch-screen [kind]
   (let [{:keys [mode pending?]} @batch-state]
     [:div {:class (when pending? "sg-batch-running")}
@@ -1420,7 +1439,7 @@ or [{:category :ocean :referents [\"coral\" \"reef\"]}]"
         (if pending? "running..." (case mode
                                     :explicit "Propose batch"
                                     :category "Brainstorm + propose"))]
-       [:button {:on-click (fn [_] (reset-batch-state! kind))
+       [:button {:on-click (fn [_] (reset-batch-form! kind))
                  :disabled pending?}
         "Reset form"]]]
      [batch-results-panel kind]]))
